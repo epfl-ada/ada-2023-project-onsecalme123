@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 ## PROJECT-Milestone 2 : Project proposal and initial analyses
 
