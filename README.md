@@ -1,6 +1,7 @@
-# ada-2023-project-onsecalme123
+<<<<<<< HEAD
 
-P2: Project proposal and initial analyses
+## PROJECT-Milestone 2 : Project proposal and initial analyses
+
 When you are done with Homework H1, you will continue to work on the next project milestone. In Milestone P2, together with your team members, you will agree on and refine your project proposal. Your first task is to select a project. Even though we provide the datasets for you to use, at this juncture, it is your responsibility to perform initial analyses and verify that what you propose is feasible given the data (including any additional data you might bring in yourself), which is crucial for the success of the project.
 
 The goal of this milestone is to intimately acquaint yourself with the data, preprocess it, and complete all the necessary descriptive statistics tasks. We expect you to have a pipeline in place, fully documented in a notebook, and show us that you have clear project goals.
@@ -20,7 +21,7 @@ P2 deliverable (done as a team): GitHub repository with the following:
 
 Readme.md file containing the detailed project proposal (up to 1000 words). Your README.md should contain:
 Title
-Abstract: A 150 word description of the project idea and goals. What’s the motivation behind your project? What story would you like to tell, and why?
+bstract: A 150 word description of the project idea and goals. What’s the motivation behind your project? What story would you like to tell, and why?
 Research Questions: A list of research questions you would like to address during the project.
 Proposed additional datasets (if any): List the additional dataset(s) you want to use (if any), and some ideas on how you expect to get, manage, process, and enrich it/them. Show us that you’ve read the docs and some examples, and that you have a clear idea on what to expect. Discuss data size and format if relevant. It is your responsibility to check that what you propose is feasible.
 Methods
