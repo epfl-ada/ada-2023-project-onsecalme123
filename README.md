@@ -1,8 +1,8 @@
-## Actors and Characters: Mirrors of Modern Societies
+## Movies' Looking Glass: a Reflection of and on Modern Societies
 
 ## Abstract
 
-The 21th century witnessed key social and political events that transformed many facets of human society. Cinema being a way to depict real-life (as many other forms of art), can reflect all those core societal events and changes in terms of  movies’ genres, scenarios, and characters. Therefore, we would like to see how the movies changed over the years and also bring to our attention the evolution of characters and actors depending on countries, timelines, and sociopolitical frameworks trying to link our results to specific events throughout history.
+The 20th century witnessed key social and political events that transformed many facets of human society. Cinema being a way to depict real-life (as many other forms of art), can reflect all those core societal events and changes in terms of  movies’ genres, scenarios, and characters. Therefore, we would like to see how the movies changed over the years and also bring to our attention the evolution of characters and actors depending on countries, timelines, and sociopolitical frameworks trying to link our results to specific events throughout history.
 
 ## Research Questions
 
