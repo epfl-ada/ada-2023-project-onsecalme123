@@ -1,4 +1,4 @@
-## Movies' Looking Glass: a Reflection of and on Modern Societies
+## Movies' Looking Glass: a Reflection of the Modern World
 
 ## Abstract
 
