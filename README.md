@@ -2,7 +2,14 @@
 
 ## Abstract
 
-The 20th century witnessed key social and political events that transformed many facets of human society. Cinema being a way to depict real-life (as many other forms of art), can reflect all those core societal events and changes in terms of  movies’ genres, scenarios, and characters. Therefore, we would like to see how the movies changed over the years and also bring to our attention the evolution of characters and actors depending on countries, timelines, and sociopolitical frameworks trying to link our results to specific events throughout history.
+The 20th century witnessed key social and political events that transformed many facets of human society. Cinema being a way to depict real-life (as many other forms of art), can reflect all those core societal events and changes in terms of  movies’ genres, scenarios, and characters. Therefore, we would like to see how the movies changed over the years and also bring to our attention the evolution of characters and actors depending on countries, timelines, and sociopolitical frameworks. Furthermore, we can look at specific impactful events that took place during the 20th century and see how those are represented in the film industry. Examples of such events are:
+- World War I: 1914-1918
+- World War II: 1939-1945
+- Atomic bombing Hiroshima & Nagasaki: 1945
+- Vietnam war: 1955 – 1975
+- Contraception pill legalization: 1960 
+- Assassination Martin Luther King, Jr: 1968
+- Summer of love: 1970
 
 ## Research Questions
 
