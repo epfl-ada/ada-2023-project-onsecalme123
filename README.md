@@ -48,7 +48,8 @@ Throughout these events we can analyze the popular movie genres, plots, whether 
 
 ## Proposed Additional Datasets
 
-We do not plan to add any other dataset than the given CMU Movie Summary Corpus dataset.
+We will use the dataset ethnicities.wikidata.csv to complete the characters.metadata.tsv from the CMU Movie Summary Corpus dataset. This dataset contains people's ethnicities mapped to their corresponding freebase ID. Since the freebase database is not accessible anymore, we downloaded this data from Wikidata, through https://query.wikidata.org.
+
 
 ## Methods
 
