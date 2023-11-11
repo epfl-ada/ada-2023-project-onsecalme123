@@ -1,1 +1,3 @@
+# Ignoring data folder to be sure that the original data is not modified
+data/MovieSummaries/movie.metadata.tsv
 data/
