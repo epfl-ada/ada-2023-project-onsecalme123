@@ -57,14 +57,13 @@ We will use the dataset ethnicities.wikidata.csv to complete the characters.meta
 
 ## Proposed Timeline
 
-By Milestone 2 (17.11.2023):
-- Clarify our research questions and finish the README.
-- Do already most of our analysis and the graphs that go with it.
+- 17.11.2023: milestone 2 submission: project proposal and data analysis
+- 24.11.2023: dictionnaries and processing
+- 01.12.2023: all statistics done
+- 08.12.2023: datastory
+- 15.12.2023: website
+- 22.12.2023: milestone 3 submission
 
-Milestone 3 (22.12.2023):
-- Implement the feedback received from the Assistant, maybe we are lacking some information we did not think about.
-- Program a website to present our findings.
-- Be done by the 15.12.2023 to have less stress during the last week of classes.
 
 
 ## Organization within the Team
