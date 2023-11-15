@@ -6,6 +6,8 @@ import nltk
 from nltk import punkt
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+import string
+import re
 
 
 def compute_nan_count_and_percentage(df):
@@ -28,12 +30,22 @@ def find_region(country_or_countries, regions):
     return None
 
 
-# Function to categorize movies based on the threshold for a specific event
+# Function to match movies to a specific event based on the threshold
 
 
 def categorize_event(summary, event_dict, threshold):
-    summary_words = set(word_tokenize(summary.lower()))
-    common_words_count = len(set(event_dict) & summary_words)
+    # Remove punctuation and set all words to lower case
+    summary_no_punct = remove_punctuation(summary)
+    summary_words = summary_no_punct.lower()
+    
+    # Define your search pattern
+    pattern = re.compile(event_dict)
+
+    # Search for the pattern in the text
+    matches = re.findall(pattern, summary_words)
+    
+    common_words_count = len(matches)
+                                         
     return common_words_count >= threshold
 
 
@@ -43,10 +55,10 @@ def categorize_event(summary, event_dict, threshold):
 def add_event_columns(df, dictionaries_df):
     # Iterate over each event in dictionaries_df and add a column to df
     for event, row in dictionaries_df.iterrows():
-        event_words = row["dictionary"]
+        event_words = row["dictionaries"]
         threshold = row["threshold"]
         df[event] = df["summary"].apply(
-            lambda x: categorize_event(x, event_words, threshold)
+            lambda x: new_categorize_event(x, event_words, threshold)
         )
     return df
 
@@ -103,3 +115,22 @@ def calculate_genre_proportions_by_event(df):
         genre_proportions_by_event[event] = genre_proportions
 
     return genre_proportions_by_event
+
+
+# Function that allows to remove punctuation in a string, we will use it in th eword search process
+
+def remove_punctuation(input_string):
+    # Create a translation table to map punctuation characters to None
+    translation_table = str.maketrans("", "", string.punctuation)
+
+    # Use translate to remove punctuation
+    result_string = input_string.translate(translation_table)
+
+    return result_string
+
+
+# Function to verify if the movies were correctly assigned to their corresponding event(s) 
+# Checks whether the true event/ movement to which the movie corresponds is also a dictionnary-mapped event/movement 
+
+def check_matching(row):
+    return row['true_event'] in row['events_belongs_to']
