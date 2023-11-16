@@ -8,6 +8,8 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import string
 import re
+import requests
+import sys
 
 
 def compute_nan_count_and_percentage(df):
@@ -134,3 +136,18 @@ def remove_punctuation(input_string):
 
 def check_matching(row):
     return row['true_event'] in row['events_belongs_to']
+
+
+def translations_imbd_to_freebase():
+
+    url = 'https://query.wikidata.org/sparql'
+    query = """ SELECT ?item ?imdbID ?freebaseID WHERE {?item wdt:P345 ?imdbID.OPTIONAL {?item wdt:P646 ?freebaseID.}}"""
+    headers = {'User-Agent': 'WDQS-example Python/%s.%s' % (sys.version_info[0], sys.version_info[1])}
+    data = requests.get(url, headers=headers, params={'query': query, 'format': 'json'}).json()
+
+    imdb = [item['imdbID']['value'] for item in data['results']['bindings']]
+    freebase = [item.get('freebaseID', {}).get('value', None) for item in data['results']['bindings']]
+
+    result_df = pd.DataFrame(data ={ 'imdb_id': imdb, 'id_freebase': freebase})
+
+    return result_df
