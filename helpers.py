@@ -151,3 +151,10 @@ def translations_imbd_to_freebase():
     result_df = pd.DataFrame(data ={ 'imdb_id': imdb, 'id_freebase': freebase})
 
     return result_df
+
+def get_unique_countries(input_list):
+    unique_countries = []
+    for item in input_list:
+        if item not in unique_countries:
+            unique_countries.append(item)
+    return unique_countries
