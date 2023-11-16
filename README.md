@@ -57,14 +57,32 @@ We will use the dataset ethnicities.wikidata.csv to complete the characters.meta
 
 ## Proposed Timeline
 
-- 17.11.2023: milestone 2 submission: project proposal and data analysis
-- 24.11.2023: dictionnaries and processing
-- 01.12.2023: all statistics done
-- 08.12.2023: datastory
-- 15.12.2023: website
-- 22.12.2023: milestone 3 submission
+```
+.
+├── 03.11.23 - Clear definition of project proposal and research questions
+│  
+├── 10.11.23 - Perform first data processing and analysis
+│  
+├── 17.11.23 - Milestone 2 submission deadline
+│  
+├── 24.11.23 - Enrichment of data analysis and verification of data processing
+│  
+├── 27.11.23 - Verify and analyze statistics assessments 
+│    
+├── 01.12.23 - Homework 2 submission deadline
+│  
+├── 04.12.23 - Website coding  
+│  
+├── 08.12.23 - Elaborate an interesting datastory
+│  
+├── 15.12.23 - Finalize code implementations and visualizations on the website
+│  
+├── 22.12.23 - Milestone 3 submission deadline
+│  
+├── 25.12.23 - Merry Christmas ! 🎁
+.
 
-
+```
 
 ## Organization within the Team
 
