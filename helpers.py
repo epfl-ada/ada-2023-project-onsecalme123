@@ -114,6 +114,7 @@ def count_genres_for_event(df, event_column):
     """
     Count the occurrences of genres for movies belonging to a specific event.
     """
+    
     df_expanded = df.copy()
     df_expanded = df_expanded.explode("new_genre")
 
@@ -270,6 +271,7 @@ def get_year_percentage(df, event):
     """
     Calculate the percentage of movies for a specific event over the years.
     """
+    
     event_data = movie_affected_to_event(df, event)
     year_percentage_series = (
         event_data.groupby("date").size() / df.groupby("date").size() * 100
