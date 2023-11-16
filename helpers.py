@@ -170,3 +170,51 @@ def calculate_false_positive_counts(id_list, movies_df, events_list):
                 false_positive_counts[event] += 1
 
     return false_positive_counts
+
+def plot_events_over_years(movies_events, events, figures_per_row=4):
+    # Extract relevant columns
+    columns_to_extract = ['date'] + events
+    events_df = movies_events[columns_to_extract]
+
+    # Calculate the number of rows needed
+    num_rows = -(-len(events) // figures_per_row)  # Ceiling division
+
+    # Create subplots for each event
+    fig, axes = plt.subplots(num_rows, figures_per_row, figsize=(20, 5 * num_rows), sharex=True, sharey=True)
+
+    # Flatten the axes array if there is only one row
+    axes = axes.flatten()
+
+    # Define a color palette for better distinction
+    palette = sns.color_palette('husl', n_colors=len(events))
+
+    # Loop through each event and plot on a separate subplot
+    for i, event in enumerate(events):
+        row_idx = i // figures_per_row
+        col_idx = i % figures_per_row
+
+        # Filter data for the specific event
+        event_data = events_df[['date', event]]
+
+        # Melt the DataFrame to have 'date' as the identifier variable
+        event_melted = pd.melt(event_data, id_vars=['date'], value_vars=[event], var_name='event', value_name='occurred')
+
+        # Filter only rows where the event occurred
+        event_occurred = event_melted[event_melted['occurred']]
+
+        # Group by 'date' and count the occurrences
+        event_count = event_occurred.groupby('date').size().reset_index(name='count')
+
+        # Plot on the corresponding subplot with a unique color
+        sns.lineplot(x='date', y='count', data = event_count, ax=axes[i], label=event, color=palette[i])
+
+        # Set subplot title
+        axes[i].set_title(f'{event}')
+
+    # Remove empty subplots if there are any
+    for i in range(len(events), len(axes)):
+        fig.delaxes(axes[i])
+
+    plt.tight_layout()
+    plt.show()
+
