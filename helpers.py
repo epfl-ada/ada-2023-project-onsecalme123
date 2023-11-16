@@ -10,6 +10,8 @@ import string
 import re
 import requests
 import sys
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 def compute_nan_count_and_percentage(df):
@@ -170,6 +172,9 @@ def calculate_false_positive_counts(id_list, movies_df, events_list):
                 false_positive_counts[event] += 1
 
     return false_positive_counts
+
+def movie_affected_to_event(df, event):
+    return df[df[event] != False]
 
 def plot_events_over_years(movies_events, events, figures_per_row=4):
     # Extract relevant columns
