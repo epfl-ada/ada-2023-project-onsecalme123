@@ -111,4 +111,7 @@ To be completed before the milestone 3 deadline
     <td style="border: 1px solid black; padding: 8px;">Elia Mounier-Poulat - Data Science Master Student</td>
     <td style="border: 1px solid black; padding: 8px;">Statistics methods expert</td>
   </tr>
+  </tr>
+    <td style="border: 1px solid black; padding: 8px;">Note: every team member participated actively in many data processing and analysis and we distributed the tasks evenly among ourselves.</td>
+  </tr>
 </table>
