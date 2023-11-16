@@ -60,7 +60,7 @@ def add_event_columns(df, dictionaries_df):
         event_words = row["dictionaries"]
         threshold = row["threshold"]
         df[event] = df["summary"].apply(
-            lambda x: new_categorize_event(x, event_words, threshold)
+            lambda x: categorize_event(x, event_words, threshold)
         )
     return df
 
