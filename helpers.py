@@ -223,3 +223,10 @@ def plot_events_over_years(movies_events, events, figures_per_row=4):
     plt.tight_layout()
     plt.show()
 
+def get_year_percentage(df, event):
+    
+    event_data = movie_affected_to_event(df, event)
+    year_percentage_series = event_data.groupby('date').size() / df.groupby('date').size() * 100
+    year_percentage_series = year_percentage_series.fillna(0)
+    
+    return year_percentage_series
