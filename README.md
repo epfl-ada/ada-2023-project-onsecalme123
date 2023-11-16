@@ -53,7 +53,7 @@ We will use the dataset ethnicities.wikidata.csv to complete the characters.meta
 
 ## Methods
 
-
+To be completed before the milestone 3 deadline
 
 ## Proposed Timeline
 
@@ -86,7 +86,29 @@ We will use the dataset ethnicities.wikidata.csv to complete the characters.meta
 
 ## Organization within the Team
 
-
-
-## Questions for TAs
-None up to now.
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;"> <center>Team Members<center> </td>
+    <td style="border: 1px solid black; padding: 8px;"> <center>Role<center> </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">Gianna Biino - SV Master Student</td>
+    <td style="border: 1px solid black; padding: 8px;">Notebook structure and organisation queen</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">Charlotte Daumal - SV Master Student</td>
+    <td style="border: 1px solid black; padding: 8px;">Keywords processing maestro</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">Sandra Frey - SV Master Student</td>
+    <td style="border: 1px solid black; padding: 8px;">Python plots' champion</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">Céline Hirsch - SV Master Student</td>
+    <td style="border: 1px solid black; padding: 8px;">Dictionnaries optimisation master</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">Elia Mounier-Poulat - Data Science Master Student</td>
+    <td style="border: 1px solid black; padding: 8px;">Statistics methods expert</td>
+  </tr>
+</table>
