@@ -158,3 +158,15 @@ def get_unique_countries(input_list):
         if item not in unique_countries:
             unique_countries.append(item)
     return unique_countries
+
+def calculate_false_positive_counts(id_list, movies_df, events_list):
+    # Initialize a dictionary to store false positive counts for each event
+    false_positive_counts = {event: 0 for event in events_list}
+
+    for element in id_list:
+        movie_to_test = movies_df.query('id_freebase == @element')
+        for event in events_list:
+            if list(movie_to_test[event])[0]:
+                false_positive_counts[event] += 1
+
+    return false_positive_counts
