@@ -52,27 +52,15 @@ To answer our research questions, we propose these two additional datasets:
 
 ### Step 1: Data Loading and Preprocessing
 
-Here, we loaded and merged the movies dataset (```movie.metadata.tsv```) with the plot summaries dataset (```plot_summaries.txt```). In the process, we removed all movies not containing a plot summary, as it is essential for our analysis. In addition, we enriched our dataset with the external datasets ```IMDb Dataset``` and the ```Reviews Dataset```. Furthermore, we preprocessed the data by adapting its format to the form most convinient for us. 
+We merged the movies dataset (```movie.metadata.tsv```) with plot summaries (```plot_summaries.txt```) The dataset was then augmented with external sources, as described above, followed by preprocessing for convenience.
 
 ### Step 2: General Statistics about the Dataset
 
-The aim of this section is to explore the size of the dataset and get a sense of its scope. For this we started with an overview of the datasets number of movies and time-span coverage. We then evaluated the datasets' NaN's and invalid values. Finally, specifically for the countries and the genres of a movie, we regrouped the existing labels into broader categories like ```world regions``` and ```new_genres```.
+In this section, we investigate time-span coverage, address NaNs and invalid values, and reorganize country and genre labels into broader categories such as ```world regions``` and ```new genres```.
 
 ### Step 3: Associating movies to historical events and movements using dictionaries
 
-In our project we focus on the impact of historical events and movements through their representation in movies. To be able to do this, we have to map each movie to the historical events or movements it belongs to. This was done using keyword search in the plot summaries. The keywords specific to each event are defined in event-related dictionaries that we created. While implementing this manually, we tried to maintain objectivity and event-specific precision.
-
-With this approach, introducing bias cannot be completely prevented which is why we performed tests to evaluate the quality of our dictionaries. The following tests were performed:
-
-#### Correlation Matrix:
-
-To measure the strength of the relationship between the different dictionaries we created a ```correlation matrix```, using ```Pearson's correlation coefficient```.
-
-#### Evaluation of Event Classification on a Test Set
-
-To further evaluate the quality of our dictionaries, we tested them on a selected sample of movies with known labels. For this, we chose 10 well-known movies per event from the internet and gathered them to create a sufficiently sized test set. 
-
-We evaluated the performance of our dictionaries by creating a ```confusion matrix```, and further performed a statistical evaluation, by calculating ```accuracy```, ```precision```, ```recall```, ```specificity``` and ```F1 score```. 
+To investigate the influence of historical events and movements in movies, we linked them to films through keyword searches in plot summaries, utilizing event-specific dictionaries. Despite our objective approach, we conducted tests to assess potential bias in our dictionaries, including the use of a ```correlation matrix``` and the creation of a test set for evaluating other ```performance metrics```.
 
 ### Step 4: Diving into the Analysis of Events
 
@@ -80,7 +68,8 @@ In this section, we will try to answer the different research questions.
 
 #### Number of Movies per Event Over the Years
 
-In this section, we plot the count of movies for each event per year. This not only shows which events are more popular and 'more interesting' to society but also serves as additional testing for our dictionary-based event classification. For example, we don't expect movies about WW2 to occur before 1939. We further calculated the percentage of movies released per year per event (event specific movies in that year / total movies released in that year) and tested for significant differences of the mean percentage of each event over the years (```ANOVA```). This is a generalized ```t-test``` that allows for the comparison of more than two means at once. 
+We plotted the annual movie count for each event, providing insights into event popularity and serving as an additional test for our dictionary-based event classification. We also performed an ```ANOVA test``` to detect significant differences in mean percentages across years per event.
+
 
 #### Number of Countries producing Movies about given Events
 
