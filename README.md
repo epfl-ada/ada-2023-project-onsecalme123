@@ -102,7 +102,7 @@ In this section, we want to compare the different rating vote counts (how many p
 
 In this section, we want to compare the different poularities of movies corresponding to different events. The significance of the differences between events were evaluated by plotting ```95% Confidance Intervals```.
 
-### Review Sentiment Analysis
+#### Review Sentiment Analysis
 
 
 In this section, we aim to evaluate the emotional impact that movies for each event had. For this, we analyzed users' written movie ```Reviews``` using sentiment analysis. We removed all movies not containing reviews and checked for unexplained entries. To perform the sentiment analysis, we imported lists of words with positive and negative sentiment correlation.
