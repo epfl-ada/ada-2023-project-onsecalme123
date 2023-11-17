@@ -60,7 +60,7 @@ The aim of this section is to explore the size of the dataset and get a sense of
 
 ### Step 3: Associating movies to historical events and movements using dictionaries
 
-In our project we focus on the impact of historical event and movements through their representation in movies. To be able to do this, we have to map each movie to the historical event or movement it belongs to. This was done using keyword search in the plot summaries. The keywords specific to each event are defined in event-related dictionaries that we created. While implementing this manually, we tried to maintain objectivity and event-specific precision.
+In our project we focus on the impact of historical events and movements through their representation in movies. To be able to do this, we have to map each movie to the historical events or movements it belongs to. This was done using keyword search in the plot summaries. The keywords specific to each event are defined in event-related dictionaries that we created. While implementing this manually, we tried to maintain objectivity and event-specific precision.
 
 With this approach, introducing bias cannot be completely prevented which is why we performed tests to evaluate the quality of our dictionaries. The following tests were performed:
 
