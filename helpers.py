@@ -12,6 +12,7 @@ import requests
 import sys
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.decomposition import PCA
 
 
 def compute_nan_count_and_percentage(df):
@@ -333,27 +334,15 @@ def pca_plot(features_df, target_df, ax):
     ax.set_ylabel('Principal Component 2 (PC2)')
     
     
-    def scatter_plot_according_events(df, x_column, y_column, axes, events, label):
-    
-    # Flatten the figure's axes
+def scatter_plot_according_events(df, x_column, y_column, axes, events, label):
+    """
+    Plot a 2D-PCA in a subplot
+    """
     
     axes = axes.flatten()
 
-    
-    # Loop through events and create scatter plots
-    
     for i, event in enumerate(events):
-        
-        
-        # Filter data for the current event
-        
         event_specific_df = movie_affected_to_event(df, event)
-        
-        
-        # Creating scatter plot
-        
         sns.regplot(x = x_column, y = y_column, data = event_specific_df, ax = axes[i], scatter_kws = {'alpha':0.2}, label = label)
-        
-        
         axes[i].set_title(event)
         axes[i].legend(loc = 'upper left')
