@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-import spacy
+
 from collections import Counter
 import nltk
 from nltk import punkt
