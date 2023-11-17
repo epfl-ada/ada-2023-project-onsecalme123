@@ -4,7 +4,7 @@
 
 The last century witnessed key social and political events that transformed many facets of human society, ranging from World War I, to Female Emancipation, to the Opioid Crisis.  Cinema being a way to depict real-life (as many other forms of art), can reflect all those core societal events and movements.
 
-The goal of our project is to analyse how these events were represented by the Film Industry and how their corresponding movies were received by the public. Were certain movies watched more than others? Did the public like certain movies more? How international was the ensemble of movie producers for each event? By answering these questions and more, we want to evaluate which event of the last century was the most impactful one. 
+The goal of our project is to analyse how these events were represented by the Film Industry and how their corresponding movies were received by the public. Were certain movies watched more than others? Did the public like certain movies more? How international was the ensemble of movie producers for each event? By answering these questions and more, we want to evaluate which event of the last century was the most impactful one. Were certain movies watched more than others? Did the public like certain movies more? How international was the ensemble of movie producers for each event? By answering these questions and more, we want to evaluate which event of the last century was the most impactful one. 
 
 The following events were analysed:
 
@@ -80,7 +80,7 @@ To measure audience attendance and the impact of movies based on the events they
 
 #### Review Sentiment Analysis
 
-We conducted sentiment analysis using imported word lists for [positive](https://ptrckprry.com/course/ssd/data/positive-words.txt) and [negative](https://ptrckprry.com/course/ssd/data/negative-words.txt) emotions. We had two options for analyzing reviews: utilizing the complete review (``` Review Detail```) or the filtered keywords from reviews (```Review Summary```), and we chose the latter due to its higher variance in positive and negative emotion ratios, assessed through a ```PCA```. 
+We conducted sentiment analysis using imported word lists for [positive](https://ptrckprry.com/course/ssd/data/positive-words.txt) and [negative](https://ptrckprry.com/course/ssd/data/negative-words.txt) emotions. We had two options for analyzing reviews: utilizing the complete review (```Review Detail```) or the filtered keywords from reviews (```Review Summary```), and we chose the latter due to its higher variance in positive and negative emotion ratios, assessed through a ```PCA```. 
 
 ## Steps for the Future 💫 
 
