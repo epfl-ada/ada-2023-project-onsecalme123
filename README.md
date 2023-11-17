@@ -80,7 +80,7 @@ To measure audience attendance and the impact of movies based on the events they
 
 #### Review Sentiment Analysis
 
-In this section, we conduct sentiment analysis using imported word lists for [positive](https://ptrckprry.com/course/ssd/data/positive-words.txt) and [negative](https://ptrckprry.com/course/ssd/data/negative-words.txt) sentiment correlation. We have two options for analyzing reviews: utilizing the complete review (``` Review Detail```) or the filtered keywords from reviews (```Review Summary```), and we chose the latter due to its higher variance in positive and negative emotion ratios, assessed through a ```PCA```. 
+In this section, we conduct sentiment analysis using imported word lists for [positive](https://ptrckprry.com/course/ssd/data/positive-words.txt) and [negative](https://ptrckprry.com/course/ssd/data/negative-words.txt) emotions. We have two options for analyzing reviews: utilizing the complete review (``` Review Detail```) or the filtered keywords from reviews (```Review Summary```), and we chose the latter due to its higher variance in positive and negative emotion ratios, assessed through a ```PCA```. 
 
 ## Steps for the Future 💫 
 
