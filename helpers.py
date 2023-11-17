@@ -279,3 +279,81 @@ def get_year_percentage(df, event):
     year_percentage_series = year_percentage_series.fillna(0)
 
     return year_percentage_series
+
+
+def compute_common_words_ratio(text, word_list):
+    """
+    Compute the common words ratio between a text and a list of words
+    """
+    
+    text_nopunct = remove_punctuation(text.lower())
+    text_words = text_nopunct.split()
+    
+    word_counts = Counter(text_words)
+    
+    common_word_counts = sum(word_counts[word] for word in word_list)
+    
+    total_words = len(text_words)
+    
+    ratio = common_word_counts / total_words if total_words > 0 else 0
+    
+    return ratio
+
+
+def add_common_words_ratio(df, column_name, words_list_1, words_list_2):
+    """
+    Add a column to each DataFrame with the ratio of common words
+    """
+
+    df[f'positive_emotion_ratio_{column_name}'] = df[column_name].apply(lambda x: compute_common_words_ratio(x, words_list_1))
+    df[f'negative_emotion_ratio_{column_name}'] = df[column_name].apply(lambda x: compute_common_words_ratio(x, words_list_2))
+    
+    return df
+
+
+def pca_plot(features_df, target_df, ax):
+    """
+    Plot a 2D-PCA in a subplot
+    """
+    
+    X = features_df
+    y = target_df
+    
+    pca = PCA(n_components = 2)
+    X_pca = pca.fit_transform(X)
+    
+    df_pca = pd.DataFrame(data = X_pca, columns = ['PC1', 'PC2'])
+    df_pca['Target'] = y
+    
+    for category in df_pca['Target'].unique():
+        subset = df_pca[df_pca['Target'] == category]
+        ax.scatter(subset['PC1'], subset['PC2'], label = category, alpha=0.8)
+
+    ax.set_xlabel('Principal Component 1 (PC1)')
+    ax.set_ylabel('Principal Component 2 (PC2)')
+    
+    
+    def scatter_plot_according_events(df, x_column, y_column, axes, events, label):
+    
+    # Flatten the figure's axes
+    
+    axes = axes.flatten()
+
+    
+    # Loop through events and create scatter plots
+    
+    for i, event in enumerate(events):
+        
+        
+        # Filter data for the current event
+        
+        event_specific_df = movie_affected_to_event(df, event)
+        
+        
+        # Creating scatter plot
+        
+        sns.regplot(x = x_column, y = y_column, data = event_specific_df, ax = axes[i], scatter_kws = {'alpha':0.2}, label = label)
+        
+        
+        axes[i].set_title(event)
+        axes[i].legend(loc = 'upper left')
