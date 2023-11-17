@@ -346,6 +346,8 @@ def scatter_plot_according_events(df, x_column, y_column, axes, events, label):
         sns.regplot(x = x_column, y = y_column, data = event_specific_df, ax = axes[i], scatter_kws = {'alpha':0.2}, label = label)
         axes[i].set_title(event)
         axes[i].legend(loc = 'upper left')
+        axes[i].set_xlabel('')
+        axes[i].set_ylabel('')
 
 
 def plot_confusion_matrix(confusion_matrix):
