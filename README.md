@@ -64,7 +64,7 @@ To investigate the influence of historical events and movements in movies, we li
 
 ### Step 4: Diving into the Analysis of Events
 
-In this section, we will try to answer the different research questions.
+In this section, we tried to answer the different research questions.
 
 #### Number of Movies per Event Over the Years
 
