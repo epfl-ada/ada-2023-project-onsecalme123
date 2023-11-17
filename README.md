@@ -49,7 +49,8 @@ Throughout these events we can analyze the popular movie genres, plots, whether 
 
 To answer our research questions, we used a few datasets to enrich our data and proceed to better analysis. Their usefulness and sources are described below:
 
-- ```ethnicities.wikidata.csv```: this dataset contains people's ethnicities mapped to their corresponding freebase ID. Since the freebase database is not accessible anymore, we downloaded this data from [Wikidata](https://query.wikidata.org). It allowed us to complete the ```characters.metadata.tsv``` from the *CMU Movie Summary Corpus* dataset. 
+- ```ethnicities.wikidata.csv```: this dataset contains people's ethnicities mapped to their corresponding freebase ID. Since the freebase database is not accessible anymore, we downloaded this data from [Wikidata](https://query.wikidata.org). It allowed us to complete the ```characters.metadata.tsv``` from the *CMU Movie Summary Corpus* dataset.
+
 - ```reviews.csv```: this dataset contains ratings and reviews of about 500k movies from the IMDB website. It is a cleaned version of a [large reviews' dataset from imdb](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset) and can be found on [Kaggle](https://www.kaggle.com/datasets/raynardj/imdb-vision-and-nlp?select=reviews.csv). More precisely, it consists of:
   - a *review_id*;
   - the username or real name of the *reviewer*;
@@ -59,7 +60,9 @@ To answer our research questions, we used a few datasets to enrich our data and 
   - a *spoiler_tag* (0 if a movies' spoil is not present in the review or else 1);
   - a *review_detail* text;
   - and a *helpful* column showing how *list[0]* found the review helpful out of *list[1]*.
+
 - ```box_office_dataset```: add description
+
 - ```ratings_dataset```: add description
 
 
