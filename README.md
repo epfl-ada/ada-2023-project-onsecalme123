@@ -145,7 +145,6 @@ Now that we have evaluated which methods we can use to measure the impacfulness 
 ├── 22.12.23 - Milestone 3 submission deadline
 │  
 ├── 25.12.23 - Merry Christmas 🎁
-.
 
 
 
