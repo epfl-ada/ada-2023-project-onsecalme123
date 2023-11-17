@@ -27,24 +27,15 @@ Throughout these events we can analyze the popular movie genres, plots, whether 
 
 ## Research Questions 🔍
 
-- How do we define/find the movies that belong to a specific historical event?
-- Do we have a specific question for one historical event?
+To determine the most impactful events/movements of the 20th and beginning of the 21st century, we define the importance of an event/movement through movies' characteristics analysis. To drive our reflexion, we formulated several main research questions:
 
-### What we want to analyze for each historical event
-- Create a Keyword Cloud with the most used words in plot summaries.
-- How are the genres distributed?
-- What are the movie box office revenues?
-- How international are the movies? (Look at languages spoken in movies)
-- How are the genders of actors distributed? Of main characters?
-- How do the ages of actors change due to the event?
-- What are the ethnicities of the actors?
-- What are the roles of women in the plot summaries? (Keywordsearch: 'working', 'sensitive', etc.), (during and after wars, during emancipation)
-- How the image of the typical family change? (Number of children, single mother, etc.)
-- How important is the state in everyday life? (Look how many times the influence of the state is mentioned)
-- How has the representation of the LGBTQ+ community changed?
-- How is mental health portrayed?
-- How is the health system represented? Mentioned how many times, as a positive or a negative instance?
-- What is the typical main character and the typical villain? (Find the most representative character)
+- What are the most ```number of movies``` about ? When were they produced ? How many countries are producing them ?
+- What are the most profitable movies in terms of ```box office revenues``` ? What events are the most profitable subject for films ?
+- Which movies receive the highest ```rating``` average from the public ? Do these movies deal with a particular event ? How many people were involved and concerned about the rating of a movie ? 
+- Do movies have similar ```emotional impact``` on the population independently of events they touch on ? Is there a significant difference between positive and negative emotional impact ?
+- In how many ```countries``` was a specific event described ? How does this vary over time and events?
+- How ```popular``` is a movie ? Does this significantly depend on the event it is mentioning ?
+- How many ```famous actors``` starred in a movie ? How does this influence the impact of a film on the public ? Can actors be cofounders of the impact of an event in movies ?
 
 
 ## Additional Datasets 📈
