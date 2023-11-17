@@ -70,26 +70,17 @@ In this section, we will try to answer the different research questions.
 
 We plotted the annual movie count for each event, providing insights into event popularity and serving as an additional test for our dictionary-based event classification. We also performed an ```ANOVA test``` to detect significant differences in mean percentages across years per event.
 
-
 #### Number of Countries producing Movies about given Events
 
-In this section, we want to evaluate how many countries were affected by a certain event, that is, how many countries produced movies about that event. To analyse the difference between events and its magnitude, we calculated the ```coefficient of variation``` and the ```standard deviation```. 
+To assess the impact of a particular event, specifically the number of countries producing movies about it, we analyzed variations and magnitudes between events by calculating the ```coefficient of variation``` and ```standard deviation```.
 
 #### Box Office Revenue
 
-In this section, we want to analyse the box office revenues average per event, as this is an indicator of how many people went to watch a movie and thereby an indicator of the impact of its content. The significance of the differences between events were evaluated by plotting ```95% Confidance Intervals```.
+To analyze the average box office revenues per event, reflecting audience attendance and the impact of content, we assessed differences between events by plotting ```95% confidence intervals```.
 
-#### Rating
+#### Rating, Rating Counts and Popularity
 
-In this section, we want to compare the different rating score averages of movies corresponding to different events. As a first step, we had to decide which dataset to use for the rating scores. We had two options: the ```IMDb Dataset``` and the ```Reviews Dataset```. To decide this, we analysed the number of NaN's contained in both, and picked the one with less NaN's (the ```IMDb Dataset```). The significance of the differences between events were evaluated by plotting ```95% Confidance Intervals```.
-
-#### Number of Rating Votes
-
-In this section, we want to compare the different rating vote counts (how many people voted) of movies corresponding to different events. The significance of the differences between events were evaluated by plotting ```95% Confidance Intervals```.
-
-#### Popularity
-
-In this section, we want to compare the different poularities of movies corresponding to different events. The significance of the differences between events were evaluated by plotting ```95% Confidance Intervals```.
+We also created ```95% confidence interval``` plots to compare average rating scores, counts, and popularity for movies related to various events.
 
 #### Review Sentiment Analysis
 
