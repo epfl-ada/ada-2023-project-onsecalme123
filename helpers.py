@@ -346,3 +346,17 @@ def scatter_plot_according_events(df, x_column, y_column, axes, events, label):
         sns.regplot(x = x_column, y = y_column, data = event_specific_df, ax = axes[i], scatter_kws = {'alpha':0.2}, label = label)
         axes[i].set_title(event)
         axes[i].legend(loc = 'upper left')
+
+
+def plot_confusion_matrix(confusion_matrix):
+    """
+    Plot confusion matrix given TP, FP, FN, TN
+    """
+    
+    [[TP, FP],[FN, TN]] = confusion_matrix
+    label = np.asarray([['TP {}'.format(TP), 'FP {}'.format(FP)],
+                        ['FN {}'.format(FN), 'TN {}'.format(TN)]])
+    
+    df_cm = pd.DataFrame(confusion_matrix, index=['Yes', 'No'], columns=['Positive', 'Negative']) 
+    
+    return sns.heatmap(df_cm, cmap='YlOrRd', annot=label, annot_kws={"size": 16}, cbar=False, fmt='')
