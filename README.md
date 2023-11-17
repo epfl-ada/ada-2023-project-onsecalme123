@@ -1,7 +1,8 @@
 ## Movies' Looking Glass: a Reflection of the Modern World
 
 
-## Abstract
+## Abstract 💡
+
 The last century witnessed key social and political events that transformed many facets of human society. Cinema being a way to depict real-life (as many other forms of art), can reflect all those core societal events and changes in terms of  movies’ genres, scenarios, and characters.
 The aim of our project is to see whether we can find specific trends, genres and characters for specific historical events in movies. For this we will regroup the countries of origin of the movies by continent or culture (maybe only look at two continents depending on the completeness of our dataset).
 We will then search how specific historical events are influencing the movies and whether we can see specific trends and groupments. Examples of such events are:
@@ -24,7 +25,8 @@ We will then search how specific historical events are influencing the movies an
 Throughout these events we can analyze the popular movie genres, plots, whether we can see tendencies for main characters, and which actors are being casted.
 
 
-## Research Questions
+## Research Questions 🔍
+
 - How do we define/find the movies that belong to a specific historical event?
 - Do we have a specific question for one historical event?
 
@@ -45,7 +47,7 @@ Throughout these events we can analyze the popular movie genres, plots, whether 
 - What is the typical main character and the typical villain? (Find the most representative character)
 
 
-## Proposed Additional Datasets
+## Additional Datasets 📈
 
 To answer our research questions, we used a few datasets to enrich our data and proceed to better analysis. Their usefulness and sources are described below:
 
@@ -66,12 +68,12 @@ To answer our research questions, we used a few datasets to enrich our data and 
 - ```ratings_dataset```: add description
 
 
-## Methods
+## Methods 🧮
 
 To be completed before the milestone 3 deadline
 
 
-## Proposed Timeline
+## Proposed Timeline ⏳
 
 ```
 .
@@ -101,31 +103,31 @@ To be completed before the milestone 3 deadline
 ```
 
 
-## Organization within the Team
+## Team's Organization 👥
 
 <table style="border-collapse: collapse; width: 100%;">
   <tr>
-    <td style="border: 1px solid black; padding: 8px;"> <center> Team Members <center> </td>
-    <td style="border: 1px solid black; padding: 8px;"> <center> Role <center> </td>
+    <td style="border: 1px solid black; padding: 8px;"> Team Members </td>
+    <td style="border: 1px solid black; padding: 8px;"> Roles </td>
   </tr>
   <tr>
-    <td style="border: 1px solid black; padding: 8px;">Gianna Biino - SV Master Student</td>
+    <td style="border: 1px solid black; padding: 8px;">Gianna Biino (@giabii) - SV Master Student</td>
     <td style="border: 1px solid black; padding: 8px;">Notebook structure and organisation queen</td>
   </tr>
   <tr>
-    <td style="border: 1px solid black; padding: 8px;">Charlotte Daumal - SV Master Student</td>
+    <td style="border: 1px solid black; padding: 8px;">Charlotte Daumal (@charlottedaumal) - SV Master Student</td>
     <td style="border: 1px solid black; padding: 8px;">Keywords processing maestro</td>
   </tr>
   <tr>
-    <td style="border: 1px solid black; padding: 8px;">Sandra Frey - SV Master Student</td>
+    <td style="border: 1px solid black; padding: 8px;">Sandra Frey (@sancatfrey) - SV Master Student</td>
     <td style="border: 1px solid black; padding: 8px;">Python plots' champion</td>
   </tr>
   <tr>
-    <td style="border: 1px solid black; padding: 8px;">Céline Hirsch - SV Master Student</td>
+    <td style="border: 1px solid black; padding: 8px;">Céline Hirsch (@celinehirsch) - SV Master Student</td>
     <td style="border: 1px solid black; padding: 8px;">Dictionnaries optimisation master</td>
   </tr>
   <tr>
-    <td style="border: 1px solid black; padding: 8px;">Elia Mounier-Poulat - Data Science Master Student</td>
+    <td style="border: 1px solid black; padding: 8px;">Elia Mounier-Poulat (@eliamounier) - Data Science Master Student</td>
     <td style="border: 1px solid black; padding: 8px;">Statistics methods expert</td>
   </tr>
 </table>
