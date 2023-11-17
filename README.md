@@ -68,7 +68,7 @@ To answer our research questions, we used a few datasets to enrich our data and 
 - ```ratings_dataset```: add description
 
 
-## Methods 🧮
+## Methods 📚
 
 To be completed before the milestone 3 deadline
 
