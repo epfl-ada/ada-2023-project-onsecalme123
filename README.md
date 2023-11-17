@@ -66,7 +66,7 @@ With this approach, introducing bias cannot be completely prevented which is why
 
 #### Correlation Matrix:
 
-To measure the strength of the relationship between the different dictionaries we created a correlation matrix, using Pearson's correlation coefficient.
+To measure the strength of the relationship between the different dictionaries we created a ```correlation matrix```, using ```Pearson's correlation coefficient```.
 
 #### Evaluation of Event Classification on a Test Set
 
@@ -80,7 +80,7 @@ In this section, we will try to answer the different research questions.
 
 #### Number of Movies per Event Over the Years
 
-In this section, we plot the count of movies for each event per year. This not only shows which events are more popular and 'more interesting' to society but also serves as additional testing for our dictionary-based event classification. For example, we don't expect movies about WW2 to occur before 1939. We further calculated the percentage of movies released per year per event (event specific movies in that year / total movies released in that year) and tested for significant differences of the mean percentage of each event over the years (ANOVA). This is a generalized t-test that allows for the comparison of more than two means at once. 
+In this section, we plot the count of movies for each event per year. This not only shows which events are more popular and 'more interesting' to society but also serves as additional testing for our dictionary-based event classification. For example, we don't expect movies about WW2 to occur before 1939. We further calculated the percentage of movies released per year per event (event specific movies in that year / total movies released in that year) and tested for significant differences of the mean percentage of each event over the years (```ANOVA```). This is a generalized ```t-test``` that allows for the comparison of more than two means at once. 
 
 #### Number of Countries producing Movies about given Events
 
@@ -88,19 +88,19 @@ In this section, we want to evaluate how many countries were affected by a certa
 
 #### Box Office Revenue
 
-In this section, we want to analyse the box office revenues average per event, as this is an indicator of how many people went to watch a movie and thereby an indicator of the impact of its content. The significance of the differences between events were evaluated by plotting 95% Confidance Intervals.
+In this section, we want to analyse the box office revenues average per event, as this is an indicator of how many people went to watch a movie and thereby an indicator of the impact of its content. The significance of the differences between events were evaluated by plotting ```95% Confidance Intervals```.
 
 #### Rating
 
-In this section, we want to compare the different rating score averages of movies corresponding to different events. As a first step, we had to decide which dataset to use for the rating scores. We had two options: the ```IMDb Dataset``` and the ```Reviews Dataset```. To decide this, we analysed the number of NaN's contained in both, and picked the one with less NaN's (the ```IMDb Dataset```). The significance of the differences between events were evaluated by plotting 95% Confidance Intervals.
+In this section, we want to compare the different rating score averages of movies corresponding to different events. As a first step, we had to decide which dataset to use for the rating scores. We had two options: the ```IMDb Dataset``` and the ```Reviews Dataset```. To decide this, we analysed the number of NaN's contained in both, and picked the one with less NaN's (the ```IMDb Dataset```). The significance of the differences between events were evaluated by plotting ```95% Confidance Intervals```.
 
 #### Number of Rating Votes
 
-In this section, we want to compare the different rating vote counts (how many people voted) of movies corresponding to different events. The significance of the differences between events were evaluated by plotting 95% Confidance Intervals.
+In this section, we want to compare the different rating vote counts (how many people voted) of movies corresponding to different events. The significance of the differences between events were evaluated by plotting ```95% Confidance Intervals```.
 
 #### Popularity
 
-In this section, we want to compare the different poularities of movies corresponding to different events. The significance of the differences between events were evaluated by plotting 95% Confidance Intervals.
+In this section, we want to compare the different poularities of movies corresponding to different events. The significance of the differences between events were evaluated by plotting ```95% Confidance Intervals```.
 
 ### Review Sentiment Analysis
 
@@ -109,9 +109,9 @@ In this section, we want to compare the different poularities of movies correspo
 
 ## Steps for the Future 💫 
 
-Now that we have evaluated which methods we can use to measure the impacfulness of our events, we will be able to actually perform this analysis. 
+Now that we have evaluated which methods we can use to measure the impacfulness of our events on society, we will be able to actually perform this analysis. 
 
-- To find the most impactful event of the last century we will have to decide how to weigh the importance of the different features (box office revenue, rating, etc.) for the final decision. 
+- To find the most impactful event of the last century we will have to decide how to weigth the importance of the different features (box office revenue, rating, etc.) for the final decision. 
 
 - We want to perform further statistical analysis to assess significance of our results. 
 
