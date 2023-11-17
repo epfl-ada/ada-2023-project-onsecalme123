@@ -41,11 +41,12 @@ To determine the most impactful events/movements of the last century, we define 
 
 ## Additional Datasets 📈
 
-To answer our research questions, we used a few datasets to enrich our data and proceed to better analysis. Their usefulness and sources are described below:
+To answer our research questions, we propose these two additional datasets:
 
-- ```reviews.csv```: this dataset contains ratings and written user reviews of about 500k movies from the IMDB website. It is a cleaned version of a [large reviews' dataset from imdb](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset) and can be found on [Kaggle](https://www.kaggle.com/datasets/raynardj/imdb-vision-and-nlp?select=reviews.csv). We will use this to perform sentiment analysis of the reviews to determine the emotional impact movies of an event had. 
+- ```reviews.csv```: this dataset contains written user reviews of about 500k movies from the IMDB website. It is a cleaned version of a [large reviews' dataset from imdb](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset) and can be found on [Kaggle](https://www.kaggle.com/datasets/raynardj/imdb-vision-and-nlp?select=reviews.csv). We will use this to perform sentiment analysis on reviews and determine the emotional impact that movies about a specific historical event had.
 
-- ```imdb_movies.csv```: this dataset contains metadata for all 45,000 movies listed in the *Full MovieLens Dataset*, including 26 million ratings from 270,000 users and movies' revenues for all 45,000 movies. Elements useful for us are the ratings of the movies, the vote-counts of the ratings and the popularity indicated for each movie. Ratings are on a scale of 1-10. We will merge this data with our movie dataset (which has already removed all movies not containing a plot summary). However, the imdb dataset has its own identifier for each movie, which does not correspond to the ```freebase_id``` of our movies dataset. Since the freebase database is not accessible anymore, we used data from [Wikidata](https://query.wikidata.org). This allowed to translate the ```imdb_id``` to its corresponding ```freebase_id```. This imdb dataset (original name: movies_metadata.csv)) was downloaded from [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset).
+- ```imdb_movies.csv```: This dataset includes metadata for 45 000 movies from the [Full MovieLens Dataset(https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset), which contains additinal interesting indicators such as vote-counts, popularity and additional movies revenues . In order to merge it with our current dataset we made queries from [Wikidata](https://query.wikidata.org) to obtain the Freebase_id translation
+
 
 
 ## Methods 📚
