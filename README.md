@@ -84,17 +84,17 @@ We also created ```95% confidence interval``` plots to compare average rating sc
 
 #### Review Sentiment Analysis
 
-In this section, we conduct sentiment analysis using imported word lists for [positive](https://ptrckprry.com/course/ssd/data/positive-words.txt) and [negative](https://ptrckprry.com/course/ssd/data/negative-words.txt) sentiment correlation. We have two options for analyzing reviews: utilizing the complete review (``` Review Detail```) or the filtered keywords from reviews (```Review Summary```), and we chose the latter due to its higher variance in positive and negative emotion ratios, assessed through a PCA. 
+In this section, we conduct sentiment analysis using imported word lists for [positive](https://ptrckprry.com/course/ssd/data/positive-words.txt) and [negative](https://ptrckprry.com/course/ssd/data/negative-words.txt) sentiment correlation. We have two options for analyzing reviews: utilizing the complete review (``` Review Detail```) or the filtered keywords from reviews (```Review Summary```), and we chose the latter due to its higher variance in positive and negative emotion ratios, assessed through a ```PCA```. 
 
 ## Steps for the Future 💫 
 
-Now that we have evaluated which methods we can use to measure the impacfulness of our events on society, we will be able to actually perform this analysis. 
+Now that we've identified methods for analyzing event impact, we will be able to proceed with the analysis.
 
-- To find the most impactful event of the last century we will have to decide how to weigth the importance of the different features (box office revenue, rating, etc.) for the final decision. 
+- To find the most impactful event of the last century we will have to decide how to weigh the importance of the different features (box office revenue, rating, etc.) for the final decision. 
 
 - We want to perform further statistical analysis to assess significance of our results. 
 
-- We will have to continue the optimization of our dictionaries, making them as event specific as possible. To address their performance issues, we might consider further testing of our dictionaries for milestone 3. One way to optimize this would be to identify which event-dictionaries are too sensitive. This could be done by examining different statistical metrics while excluding one 'event' dictionary at a time. Furthermore, we will have to reconsider what kind of threshold value we want to use (example: specific threshold for each dictionary).
+- We'll optimize dictionaries for event specificity, addressing performance issues through potential testing in milestone 3. Optimization may involve identifying overly sensitive event-dictionaries, examining statistical metrics while excluding one at a time. We'll also reassess threshold values, considering specific thresholds for each dictionary.
 
 - It could be interesting to perform clustering on our dataset using our impact indicators as prediction features. This could then be compared to the dictionary-based event-matching method.
 
