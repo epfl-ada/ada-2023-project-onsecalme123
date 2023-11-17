@@ -84,7 +84,7 @@ In this section, we conduct sentiment analysis using imported word lists for [po
 
 ## Steps for the Future 💫 
 
-Now that we've identified methods for analyzing event impact, we will be able to proceed with the analysis.
+Now that we have identified methods for analyzing event impact, we will be able to proceed with the analysis.
 
 - To find the most impactful event of the last century we will have to decide how to weigh the importance of the different features (box office revenue, rating, etc.) for the final decision. 
 
