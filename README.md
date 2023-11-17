@@ -45,7 +45,7 @@ To answer our research questions, we propose these two additional datasets:
 
 - ```reviews.csv```: this dataset contains written user reviews of about 500k movies from the IMDB website. It is a cleaned version of a [large reviews' dataset from imdb](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset) and can be found on [Kaggle](https://www.kaggle.com/datasets/raynardj/imdb-vision-and-nlp?select=reviews.csv). We will use this to perform sentiment analysis on reviews and determine the emotional impact that movies about a specific historical event had.
 
-- ```imdb_movies.csv```: This dataset includes metadata for 45 000 movies from the [Full MovieLens Dataset(https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset), which contains additinal interesting indicators such as vote-counts, popularity and additional movies revenues . In order to merge it with our current dataset we made queries from [Wikidata](https://query.wikidata.org) to obtain the Freebase_id translation
+- ```imdb_movies.csv```: This dataset includes metadata for 45 000 movies from the [Full MovieLens Dataset](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset), which contains additinal interesting indicators such as vote-counts, popularity and additional movies revenues. In order to merge it with our current dataset we made queries from [Wikidata](https://query.wikidata.org) to obtain the Freebase_id translation.
 
 
 
