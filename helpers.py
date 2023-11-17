@@ -284,7 +284,7 @@ def get_year_percentage(df, event):
 
 def compute_common_words_ratio(text, word_list):
     """
-    Compute the common words ratio between a text and a list of words
+    Compute the common words ratio between a text and a list of words.
     """
     
     text_nopunct = remove_punctuation(text.lower())
@@ -303,7 +303,7 @@ def compute_common_words_ratio(text, word_list):
 
 def add_common_words_ratio(df, column_name, words_list_1, words_list_2):
     """
-    Add a column to each DataFrame with the ratio of common words
+    Add a column to each DataFrame with the ratio of common words.
     """
 
     df[f'positive_emotion_ratio_{column_name}'] = df[column_name].apply(lambda x: compute_common_words_ratio(x, words_list_1))
@@ -314,7 +314,7 @@ def add_common_words_ratio(df, column_name, words_list_1, words_list_2):
 
 def pca_plot(features_df, target_df, ax):
     """
-    Plot a 2D-PCA in a subplot
+    Plot a 2D-PCA in a subplot.
     """
     
     X = features_df
@@ -336,7 +336,7 @@ def pca_plot(features_df, target_df, ax):
     
 def scatter_plot_according_events(df, x_column, y_column, axes, events, label):
     """
-    Plot a 2D-PCA in a subplot
+    Plot scatter plot and linear regression line according to events.
     """
     
     axes = axes.flatten()
