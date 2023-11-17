@@ -1,70 +1,128 @@
-# Movies' Looking Glass: a Reflection of the Modern World 
-
+# From Protests to Pixels: The Global Film Industry's Reflections on the Biggest Movements and Events of the Last Century
 
 ## Abstract 💡
 
-The last century witnessed key social and political events that transformed many facets of human society. Cinema being a way to depict real-life (as many other forms of art), can reflect all those core societal events and changes in terms of  movies’ genres, scenarios, and characters.
-The aim of our project is to see whether we can find specific trends, genres and characters for specific historical events in movies. For this we will regroup the countries of origin of the movies by continent or culture (maybe only look at two continents depending on the completeness of our dataset).
-We will then search how specific historical events are influencing the movies and whether we can see specific trends and groupments. Examples of such events are:
-- World War I: 1914-1918 (see if we have enough data
-- World War II: 1939-1945
-- Atomic bombing Hiroshima & Nagasaki: 1945
-- Decolonialization (Middle East and Asia ~1945, Africa: ~1955)
-- McCarthy hearings: 1954
-- Vietnam war: 1955 – 1975
-- Contraception pill legalization: 1960 
-- Assassination Martin Luther King, Jr: 1968 (which would only be specific for the US but might be interesting to look at)
-- Moon Landing: 1969
-- Summer of love: 1970
-- AIDS: 1981
-- Fall of the Berlin Wall: 1989
-- Introduction of smartphones: ~ 1995
-- 9/11: 2001
-- Climate Change: ~2000? 
+The last century witnessed key social and political events that transformed many facets of human society, ranging from World War I, to Female Emancipation, to the Opioid Crisis. Cinema can be used as a tool to depict real-life (as many other forms of art), and thereby reflects all of those core societal events and movements. 
 
-Throughout these events we can analyze the popular movie genres, plots, whether we can see tendencies for main characters, and which actors are being casted.
+The goal of our project is to analyse how these events were represented by the Film Industry and how their corresponding movies were received by the public. Were certain movies watched more than others? Did the public like certain movies more? How international was the ensemble of movie producers for each event? By answering these questions and more, we want to evaluate which event of the last century was the most impactful one. 
+
+The following events were analysed:
+
+- World War 1
+- World War 2
+- Space exploration
+- The Cold War
+- The Vietnam War
+- Women emancipation
+- Black history
+- Digitalisation
+- Sexuality
+- The emergence of STDs
+- The Opioid Crisis
+- Destigmatizing Mental Health
+- The Atomic Bomb
+- The emergence of Genetic Engineering
+- LGBTQ emancipation
+- Terrorism
 
 
 ## Research Questions 🔍
 
-To determine the most impactful events/movements of the 20th and beginning of the 21st century, we define the importance of an event/movement through movies' characteristics analysis. To drive our reflexion, we formulated several main research questions:
+To determine the most impactful events/movements of the last century, we define the importance of an event/movement through movies' characteristics analysis. To drive our reflexion, we formulated several main research questions:
 
-- What are the most ```number of movies``` about ? When were they produced ? How many countries are producing them ?
-- What are the most profitable movies in terms of ```box office revenues``` ? What events are the most profitable subject for films ?
-- Which movies receive the highest ```rating``` average from the public ? Do these movies deal with a particular event ? How many people were involved and concerned about the rating of a movie ? 
-- Do movies have similar ```emotional impact``` on the population independently of events they touch on ? Is there a significant difference between positive and negative emotional impact ?
-- In how many ```countries``` was a specific event described ? How does this vary over time and events?
-- How ```popular``` is a movie ? Does this significantly depend on the event it is mentioning ?
-- How many ```famous actors``` starred in a movie ? How does this influence the impact of a film on the public ? Can actors be cofounders of the impact of an event in movies ?
+- For each event we evaluate the number of movies that were produced about it. How does this number vary over time? Can we find a significant difference between the different events that will give us an indication about the most impactful event?
+- How many different countries produced movies discussing the individual events? When an event is discussed in many countries, it can be argued that it had a big worldwide impact. Can we find significant differences concerning the different events?
+- What are the most profitable movies in terms of box office revenues ? High revenues indicate a high interest of the public and thereby may reflect the impactfulness of the movies corresponding event. 
+- What events' movies receive the highest rating average from the public? The higher the rating, the higher the interest of the public in the topic (or in this case event) that the movies discuss. 
+- How many people were involved and concerned about the rating of a movie (the vote count)? Events whose movies are rated by more people may have had a higher importance for society. 
+- Can we observe a significant difference in the average popularity of movies belonging to certain events? Higher popularity of movies indicates a bigger impact of the event in the society.
+- Is there a significant difference between positive and negative emotional impact of movies depending on events? Can we analyse the emotianal impacts by evaluating written movie reviews by sentiment analysis?
 
 
 ## Additional Datasets 📈
 
 To answer our research questions, we used a few datasets to enrich our data and proceed to better analysis. Their usefulness and sources are described below:
 
-- ```ethnicities.wikidata.csv```: this dataset contains people's ethnicities mapped to their corresponding freebase ID. Since the freebase database is not accessible anymore, we downloaded this data from [Wikidata](https://query.wikidata.org). It allowed us to complete the *characters.metadata.tsv*  file from the *CMU Movie Summary Corpus* dataset.
+- reviews.csv: this dataset contains ratings and written user reviews of about 500k movies from the IMDB website. It is a cleaned version of a [large reviews' dataset from imdb](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset) and can be found on [Kaggle](https://www.kaggle.com/datasets/raynardj/imdb-vision-and-nlp?select=reviews.csv). We will use this to perform sentiment analysis of the reviews to determine the emotional impact movies of an event had. 
 
-- ```reviews.csv```: this dataset contains ratings and reviews of about 500k movies from the IMDB website. It is a cleaned version of a [large reviews' dataset from imdb](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset) and can be found on [Kaggle](https://www.kaggle.com/datasets/raynardj/imdb-vision-and-nlp?select=reviews.csv). More precisely, it consists of:
-  - a *review_id*;
-  - the username or real name of the *reviewer*;
-  - the *movie* 's title;
-  - a *rating* given by the reviewer (grade between 0 and 10, 10 being the best);
-  - a *review_summary*;
-  - a *spoiler_tag* (0 if a movies' spoil is not present in the review or else 1);
-  - a *review_detail* text;
-  - and a *helpful* column showing how *list[0]* found the review helpful out of *list[1]*.
-
-- ```imdb_movies.csv```: this dataset contains metadata for all 45,000 movies listed in the *Full MovieLens Dataset*, including 26 million ratings from 270,000 users and movies' revenues for all 45,000 movies. Ratings are on a scale of 1-5. This data was downloaded from [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset).
+- imdb_movies.csv: this dataset contains metadata for all 45,000 movies listed in the Full MovieLens Dataset, including 26 million ratings from 270,000 users and movies' revenues for all 45,000 movies. Elements useful for us are the ratings of the movies, the vote-counts of the ratings and the popularity indicated for each movie. Ratings are on a scale of 1-10. We will merge this data with our movie dataset (which has already removed all movies not containing a plot summary). However, the imdb dataset has its own identifier for each movie, which does not correspond to the freebase_id of our movies dataset. Since the freebase database is not accessible anymore, we used data from [Wikidata](https://query.wikidata.org). This allowed to translate the imdb_id to its corresponding freebase_id. This imdb dataset (original name: movies_metadata.csv)) was downloaded from [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset).
 
 
 ## Methods 📚
 
-To be completed before the milestone 3 deadline
+### Step 1: Data Loading and Preprocessing
+
+Here, we loaded and merged the movies dataset (movie.metadata.tsv) with the plot summaries dataset (plot_summaries.txt). In the process, we removed all movies not containing a plot summary, as it is essential for our analysis. In addition, we enriched our dataset with the external datasets IMDb Dataset and the Reviews Dataset (see Additional Datasets). Furthermore, we preprocessed the data by adapting its format to the form most convinient for us. 
+
+### Step 2: General Statistics about the Dataset
+
+The aim of this section is to explore the size of the dataset and get a sense of its scope. For this we started with an overview of the datasets number of movies and time-span coverage. We then evaluated the datasets' NaN's and outliers (invalid values). Finally, specifically for the countries and the genres of a movie, we regrouped the existing labels into broader categories (for the countries this translates into world regions).
+
+### Step 3: Associating movies to historical events and movements using dictionaries
+
+In our project we focus on the impact of historical event and movements through their representation in movies. To be able to do this, we have to map each movie to the historical event or movement it belongs to. This was done using keyword search in the plot summaries. The keywords specific to each event are defined in event-related dictionaries we created. This was done manually by us while trying to stay as objective and event-specific as possible.
+
+With this approach, introducing bias cannot be completely prevented which is why we performed tests to evaluate the quality of our dictionaries. The following tests were performed:
+
+#### Correlation Matrix:
+
+To measure the strength of the relationship between the different dictionaries we created a correlation matrix, using Pearson's correlation coefficient.
+
+#### Evaluation of Event Classification on a Test Set
+
+To further evaluate the quality of our dictionaires, we tested them on a selected sample of movies with known labels. For this we selected 10 movies per event, where we paid close attention to the fact that they should only correspond to a single event. 
+
+We evaluated the performance of our dictionaries by creating a confusion matrix, indicating the True positives, True negatives, False positives and False negatives of our results. We further performed a statistical evaluation, by calculating its accuracy, precision, recall, specificity and F1 score. 
+
+### Step 4: Diving into the Analysis of Events
+
+In this section, we will try to answer the different research questions.
+
+#### Number of Movies per Event Over the Years
+
+In this section, we plot the count of movies for each event per year. This not only shows which events are more popular and 'more interesting' to society but also serves as additional testing for our dictionary-based event classification. For example, we don't expect movies about WW2 to occur before 1939. We further calculated the percentage of movies released per year per event (event specific movies in that year / total movies released in that year) and tested for significant differences of the mean percentage of each event over the years (ANOVA). This is a generalized t-test that allows for the comparison of more than two means at once. 
+
+#### Number of Countries producing Movies about given Events
+
+In this section, we want to evaluate how many countries were affected by a certain event, that is, how many countries produced movies about that event. To analyse the difference between events and its magnitude, we calculated the coefficient of variation and the standard deviation. 
+
+#### Box Office Revenue
+
+In this section, we want to analyse the box office revenues average per event, as this is an indicator of how many people went to watch a movie and thereby an indicator of the impact of its content. The significance of the differences between events were evaluated by plotting 95% Confidance Intervals.
+
+#### Rating
+
+In this section, we want to compare the different rating score averages of movies corresponding to different events. As a first step, we had to decide which dataset to use for the rating scores. We had two options: the IMDb Dataset and the Reviews Dataset. To decide this, we analysed the number of NaN's contained in both, and picked the one with less NaN's (the IMDb Dataset). The significance of the differences between events were evaluated by plotting 95% Confidance Intervals.
+
+#### Number of Rating Votes
+
+In this section, we want to compare the different rating vote counts (how many people voted) of movies corresponding to different events. The significance of the differences between events were evaluated by plotting 95% Confidance Intervals.
+
+#### Popularity
+
+In this section, we want to compare the different poularities of movies corresponding to different events. The significance of the differences between events were evaluated by plotting 95% Confidance Intervals.
+
+### Review Sentiment Analysis
+
+--> CHARLOTTE
 
 
-## Timeline ⏳
+## Steps for the Future 💫 
 
-```
+Now that we have evaluated which methods we can use to measure the impacfulness of our events, we will be able to actually perform this analysis. 
+
+- To find the most impactful event of the last century we will have to decide how to weigh the importance of the different features (box office revenue, rating, etc.) for the final decision. 
+
+- We want to perform further statistical analysis to assess significance of our results. 
+
+- We will have to continue the optimization of our dictionaries, making them as event specific as possible. To address their performance issues, we might consider further testing of our dictionaries for milestone 3. One way to optimize this would be to identify which event-dictionaries are too sensitive. This could be done by examining different statistical metrics while excluding one 'event' dictionary at a time. Furthermore, we will have to reconsider what kind of threshold value we want to use (example: specific threshold for each dictionary).
+
+- It could be interesting to perform clustering on our dataset using our impact indicators as prediction features. This could then be compared to the dictionary-based event-matching method.
+
+
+## Proposed Timeline ⏳
+
+
 .
 ├── 03.11.23 - Clear definition of project proposal and research questions
 │  
@@ -89,7 +147,7 @@ To be completed before the milestone 3 deadline
 ├── 25.12.23 - Merry Christmas 🎁
 .
 
-```
+
 
 
 ## About our Team 👥
@@ -121,4 +179,4 @@ To be completed before the milestone 3 deadline
   </tr>
 </table>
 
->**Note**: every team member participated actively in many data processing and analysis. We distributed the tasks evenly among ourselves.
+>*Note*: every team member participated actively in many data processing and analysis. We distributed the tasks evenly among ourselves.
