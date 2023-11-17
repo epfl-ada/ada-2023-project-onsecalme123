@@ -104,10 +104,7 @@ In this section, we want to compare the different poularities of movies correspo
 
 #### Review Sentiment Analysis
 
-
-In this section, we aim to evaluate the emotional impact that movies for each event had. For this, we analyzed users' written movie ```Reviews``` using sentiment analysis. We removed all movies not containing reviews and checked for unexplained entries. To perform the sentiment analysis, we imported lists of words with [positive](https://ptrckprry.com/course/ssd/data/positive-words.txt) and [negative](https://ptrckprry.com/course/ssd/data/negative-words.txt) sentiment correlation.
-We have two possibilities to analyze the reviews: either we use the ``` Review Detail```(complete review) or the ```Review Summary``` (filtered keywords from reviews). We decided to use the ```Review Summary``` column, as for those there is a greater variance between the positive and negative emotion ratio, which we evaluated by performing a ```PCA```. On the positive and negative emotion ratios over the years for each event we performed a ```linear regression``` to analyze its tendencies. 
-
+In this section, we conduct sentiment analysis using imported word lists for [positive](https://ptrckprry.com/course/ssd/data/positive-words.txt) and [negative](https://ptrckprry.com/course/ssd/data/negative-words.txt) sentiment correlation. We have two options for analyzing reviews: utilizing the complete review (``` Review Detail```) or the filtered keywords from reviews (```Review Summary```), and we chose the latter due to its higher variance in positive and negative emotion ratios, assessed through a PCA. 
 
 ## Steps for the Future 💫 
 
