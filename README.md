@@ -1,5 +1,6 @@
 ## Movies' Looking Glass: a Reflection of the Modern World
 
+
 ## Abstract
 The last century witnessed key social and political events that transformed many facets of human society. Cinema being a way to depict real-life (as many other forms of art), can reflect all those core societal events and changes in terms of  movies’ genres, scenarios, and characters.
 The aim of our project is to see whether we can find specific trends, genres and characters for specific historical events in movies. For this we will regroup the countries of origin of the movies by continent or culture (maybe only look at two continents depending on the completeness of our dataset).
@@ -22,6 +23,7 @@ We will then search how specific historical events are influencing the movies an
 
 Throughout these events we can analyze the popular movie genres, plots, whether we can see tendencies for main characters, and which actors are being casted.
 
+
 ## Research Questions
 - How do we define/find the movies that belong to a specific historical event?
 - Do we have a specific question for one historical event?
@@ -43,17 +45,27 @@ Throughout these events we can analyze the popular movie genres, plots, whether 
 - What is the typical main character and the typical villain? (Find the most representative character)
 
 
-
-
-
 ## Proposed Additional Datasets
 
-We will use the dataset ethnicities.wikidata.csv to complete the characters.metadata.tsv from the CMU Movie Summary Corpus dataset. This dataset contains people's ethnicities mapped to their corresponding freebase ID. Since the freebase database is not accessible anymore, we downloaded this data from Wikidata, through https://query.wikidata.org.
+To answer our research questions, we used a few datasets to enrich our data and proceed to better analysis. Their usefulness and sources are described below:
+- ```ethnicities.wikidata.csv```: this dataset contains people's ethnicities mapped to their corresponding freebase ID. Since the freebase database is not accessible anymore, we downloaded this data from [Wikidata](https://query.wikidata.org). It allowed us to complete the ```characters.metadata.tsv``` from the *CMU Movie Summary Corpus* dataset. 
+- ```reviews.csv```: this dataset contains ratings and reviews of about 500k movies from the IMDB website. It is a cleaned version of a [large reviews' dataset from imdb](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset) and can be found on [Kaggle](https://www.kaggle.com/datasets/raynardj/imdb-vision-and-nlp?select=reviews.csv). More precisely, it consists of:
+  - a ```review_id```;
+  - the username or real name of the ```reviewer```;
+  - the ```movie``` 's title;
+  - a ```rating``` given by the reviewer (grade between 0 and 10, 10 being the best);
+  - a ```review_summary```;
+  - a ```spoiler_tag``` (0 if a movies' spoil is not present in the review or else 1);
+  - a ```review_detail``` text;
+  - and a ```helpful``` column showing how ```list[0]``` found the review helpful out of ```list[1]```.
+- ```box_office_dataset```: add description
+- ```ratings_dataset```: add description
 
 
 ## Methods
 
 To be completed before the milestone 3 deadline
+
 
 ## Proposed Timeline
 
@@ -79,10 +91,11 @@ To be completed before the milestone 3 deadline
 │  
 ├── 22.12.23 - Milestone 3 submission deadline
 │  
-├── 25.12.23 - Merry Christmas ! 🎁
+├── 25.12.23 - Merry Christmas 🎁
 .
 
 ```
+
 
 ## Organization within the Team
 
