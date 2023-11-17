@@ -132,13 +132,13 @@ Now that we have evaluated which methods we can use to measure the impacfulness 
 │  
 ├── 24.11.23 - Enrichment of data analysis and verification of data processing
 │  
-├── 27.11.23 - Verify and analyze statistics assessments 
+├── 27.11.23 - Elaborate an interesting datastory 
 │    
 ├── 01.12.23 - Homework 2 submission deadline
 │  
-├── 04.12.23 - Website coding  
+├── 04.12.23 - Getting the analysis and plots finalized
 │  
-├── 08.12.23 - Elaborate an interesting datastory
+├── 08.12.23 - Website coding
 │  
 ├── 15.12.23 - Finalize code implementations and visualizations on the website
 │  
