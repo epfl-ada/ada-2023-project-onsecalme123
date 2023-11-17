@@ -2,7 +2,7 @@
 
 ## Abstract 💡
 
-The last century witnessed key social and political events that transformed many facets of human society, ranging from World War I, to Female Emancipation, to the Opioid Crisis. Cinema can be used as a tool to depict real-life (as many other forms of art), and thereby reflects all of those core societal events and movements. 
+The last century witnessed key social and political events that transformed many facets of human society, ranging from World War I, to Female Emancipation, to the Opioid Crisis.  Cinema being a way to depict real-life (as many other forms of art), can reflect all those core societal events and movements.
 
 The goal of our project is to analyse how these events were represented by the Film Industry and how their corresponding movies were received by the public. Were certain movies watched more than others? Did the public like certain movies more? How international was the ensemble of movie producers for each event? By answering these questions and more, we want to evaluate which event of the last century was the most impactful one. 
 
