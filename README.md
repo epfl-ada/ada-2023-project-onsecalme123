@@ -16,8 +16,8 @@ The following events were analysed:
 - Women emancipation
 - Black history
 - Digitalisation
-- Sexuality
-- The emergence of STDs
+- Sexuality emancipation
+- The rising of STDs 
 - The Opioid Crisis
 - Destigmatizing Mental Health
 - The Atomic Bomb
