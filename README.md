@@ -43,7 +43,7 @@ To determine the most impactful events/movements of the last century, we define 
 
 To answer our research questions, we propose these two additional datasets:
 
-- ```reviews.csv```: This dataset contains written user reviews of about 500k movies from the IMDB website. It is a cleaned version of a reviews' dataset from [IMDB](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset) and can be found on [Kaggle](https://www.kaggle.com/datasets/raynardj/imdb-vision-and-nlp?select=reviews.csv). We will use this to perform sentiment analysis on reviews and determine the emotional impact that movies about a specific historical event had on society.
+- ```reviews.csv```: This dataset contains written user reviews of about 500k movies from the IMDb website. It is a cleaned version of a reviews' dataset from [IMDb](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset) and can be found on [Kaggle](https://www.kaggle.com/datasets/raynardj/imdb-vision-and-nlp?select=reviews.csv). We will use this to perform sentiment analysis on reviews and determine the emotional impact that movies about a specific historical event had on society.
 
 - ```imdb_movies.csv```: This dataset includes metadata for 45 000 movies from the *Full Movie Lens Dataset* obtained from  [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset), which contains additinal interesting indicators such as vote-counts, popularity and additional movies revenues. We merged it with our current dataset by querying [Wikidata](https://query.wikidata.org) for Freebase_id translations.
 
@@ -56,7 +56,7 @@ Here, we loaded and merged the movies dataset (```movie.metadata.tsv```) with th
 
 ### Step 2: General Statistics about the Dataset
 
-The aim of this section is to explore the size of the dataset and get a sense of its scope. For this we started with an overview of the datasets number of movies and time-span coverage. We then evaluated the datasets' NaN's and invalid values. Finally, specifically for the countries and the genres of a movie, we regrouped the existing labels into broader categories (```world regions```, ```new_genres```).
+The aim of this section is to explore the size of the dataset and get a sense of its scope. For this we started with an overview of the datasets number of movies and time-span coverage. We then evaluated the datasets' NaN's and invalid values. Finally, specifically for the countries and the genres of a movie, we regrouped the existing labels into broader categories like ```world regions``` and ```new_genres```.
 
 ### Step 3: Associating movies to historical events and movements using dictionaries
 
