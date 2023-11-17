@@ -60,7 +60,7 @@ In this section, we investigate time-span coverage, address NaNs and invalid val
 
 ### Step 3: Associating movies to historical events and movements using dictionaries
 
-To investigate the influence of historical events and movements in movies, we linked them to films through keyword searches in plot summaries, utilizing event-specific dictionaries. Despite our objective approach, we conducted tests to assess potential bias in our dictionaries, including the use of a ```correlation matrix``` and the creation of a test set for evaluating other ```performance metrics```.
+To investigate the influence of historical events and movements in movies, we linked them to films through keyword searches in plot summaries, utilizing event-specific dictionaries we created. Despite our objective approach, we conducted tests to assess potential bias in our dictionaries, including the use of a ```correlation matrix``` and the creation of a test set for evaluating other ```performance metrics```.
 
 ### Step 4: Diving into the Analysis of Events
 
