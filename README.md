@@ -63,9 +63,7 @@ To answer our research questions, we used a few datasets to enrich our data and 
   - a *review_detail* text;
   - and a *helpful* column showing how *list[0]* found the review helpful out of *list[1]*.
 
-- ```box_office_dataset```: add description
-
-- ```ratings_dataset```: add description
+- ```imdb_movies.csv```: this dataset contains metadata for all 45,000 movies listed in the *Full MovieLens Dataset*, including 26 million ratings from 270,000 users and movies' revenues for all 45,000 movies. Ratings are on a scale of 1-5. This data was downloaded from [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset).
 
 
 ## Methods 📚
