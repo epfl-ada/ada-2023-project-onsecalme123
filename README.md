@@ -36,7 +36,7 @@ To determine the most impactful events/movements of the last century, we define 
 - What events' movies receive the highest ```rating``` average from the public? The higher the rating, the higher the interest of the public in the topic (or in this case event) that the movies discuss. 
 - How many people were involved and concerned about the rating of a movie (the ```vote count```)? Events whose movies are rated by more people may have had a higher importance for society. 
 - Can we observe a significant difference in the average ```popularity``` of movies belonging to certain events? Higher popularity of movies indicates a bigger impact of the event in the society.
-- Is there a significant difference between positive and negative emotional impact of movies depending on events? Can we analyse the emotianal impacts by evaluating written movie reviews by ```sentiment analysis```?
+- Is there a significant difference between positive and negative emotional impact of movies depending on events? Can we analyse the emotional impacts by evaluating written movie reviews by ```sentiment analysis```?
 
 
 ## Additional Datasets 📈
