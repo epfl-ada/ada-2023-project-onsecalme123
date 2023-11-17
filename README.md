@@ -20,43 +20,43 @@ The following events were analysed:
 - The emergence of STDs
 - The Opioid Crisis
 - Destigmatizing Mental Health
-- The Atomic Bomb
-- The emergence of Genetic Engineering
-- LGBTQ emancipation
-- Terrorism
+>- The Atomic Bomb
+>- The emergence of Genetic Engineering
+>- LGBTQ emancipation
+>- Terrorism
 
 
 ## Research Questions 🔍
 
 To determine the most impactful events/movements of the last century, we define the importance of an event/movement through movies' characteristics analysis. To drive our reflexion, we formulated several main research questions:
 
-- For each event we evaluate the number of movies that were produced about it. How does this number vary over time? Can we find a significant difference between the different events that will give us an indication about the most impactful event?
-- How many different countries produced movies discussing the individual events? When an event is discussed in many countries, it can be argued that it had a big worldwide impact. Can we find significant differences concerning the different events?
-- What are the most profitable movies in terms of box office revenues ? High revenues indicate a high interest of the public and thereby may reflect the impactfulness of the movies corresponding event. 
-- What events' movies receive the highest rating average from the public? The higher the rating, the higher the interest of the public in the topic (or in this case event) that the movies discuss. 
-- How many people were involved and concerned about the rating of a movie (the vote count)? Events whose movies are rated by more people may have had a higher importance for society. 
-- Can we observe a significant difference in the average popularity of movies belonging to certain events? Higher popularity of movies indicates a bigger impact of the event in the society.
-- Is there a significant difference between positive and negative emotional impact of movies depending on events? Can we analyse the emotianal impacts by evaluating written movie reviews by sentiment analysis?
+- For each event we evaluate the ```number of movies``` that were produced about it. How does this number vary over time? Can we find a significant difference between the different events that will give us an indication about the most impactful event?
+- How many different ```countries``` produced movies discussing the individual events? When an event is discussed in many countries, it can be argued that it had a big worldwide impact. Can we find significant differences concerning the different events?
+- What are the most profitable movies in terms of ```box office revenues``` ? High revenues indicate a high interest of the public and thereby may reflect the impactfulness of the movies corresponding event. 
+- What events' movies receive the highest ```rating``` average from the public? The higher the rating, the higher the interest of the public in the topic (or in this case event) that the movies discuss. 
+- How many people were involved and concerned about the rating of a movie (the ```vote count```)? Events whose movies are rated by more people may have had a higher importance for society. 
+- Can we observe a significant difference in the average ```popularity``` of movies belonging to certain events? Higher popularity of movies indicates a bigger impact of the event in the society.
+- Is there a significant difference between positive and negative emotional impact of movies depending on events? Can we analyse the emotianal impacts by evaluating written movie reviews by ```sentiment analysis```?
 
 
 ## Additional Datasets 📈
 
 To answer our research questions, we used a few datasets to enrich our data and proceed to better analysis. Their usefulness and sources are described below:
 
-- reviews.csv: this dataset contains ratings and written user reviews of about 500k movies from the IMDB website. It is a cleaned version of a [large reviews' dataset from imdb](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset) and can be found on [Kaggle](https://www.kaggle.com/datasets/raynardj/imdb-vision-and-nlp?select=reviews.csv). We will use this to perform sentiment analysis of the reviews to determine the emotional impact movies of an event had. 
+- ```reviews.csv```: this dataset contains ratings and written user reviews of about 500k movies from the IMDB website. It is a cleaned version of a [large reviews' dataset from imdb](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset) and can be found on [Kaggle](https://www.kaggle.com/datasets/raynardj/imdb-vision-and-nlp?select=reviews.csv). We will use this to perform sentiment analysis of the reviews to determine the emotional impact movies of an event had. 
 
-- imdb_movies.csv: this dataset contains metadata for all 45,000 movies listed in the Full MovieLens Dataset, including 26 million ratings from 270,000 users and movies' revenues for all 45,000 movies. Elements useful for us are the ratings of the movies, the vote-counts of the ratings and the popularity indicated for each movie. Ratings are on a scale of 1-10. We will merge this data with our movie dataset (which has already removed all movies not containing a plot summary). However, the imdb dataset has its own identifier for each movie, which does not correspond to the freebase_id of our movies dataset. Since the freebase database is not accessible anymore, we used data from [Wikidata](https://query.wikidata.org). This allowed to translate the imdb_id to its corresponding freebase_id. This imdb dataset (original name: movies_metadata.csv)) was downloaded from [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset).
+- ```imdb_movies.csv```: this dataset contains metadata for all 45,000 movies listed in the *Full MovieLens Dataset*, including 26 million ratings from 270,000 users and movies' revenues for all 45,000 movies. Elements useful for us are the ratings of the movies, the vote-counts of the ratings and the popularity indicated for each movie. Ratings are on a scale of 1-10. We will merge this data with our movie dataset (which has already removed all movies not containing a plot summary). However, the imdb dataset has its own identifier for each movie, which does not correspond to the ```freebase_id``` of our movies dataset. Since the freebase database is not accessible anymore, we used data from [Wikidata](https://query.wikidata.org). This allowed to translate the ```imdb_id``` to its corresponding ```freebase_id```. This imdb dataset (original name: movies_metadata.csv)) was downloaded from [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset).
 
 
 ## Methods 📚
 
 ### Step 1: Data Loading and Preprocessing
 
-Here, we loaded and merged the movies dataset (movie.metadata.tsv) with the plot summaries dataset (plot_summaries.txt). In the process, we removed all movies not containing a plot summary, as it is essential for our analysis. In addition, we enriched our dataset with the external datasets IMDb Dataset and the Reviews Dataset (see Additional Datasets). Furthermore, we preprocessed the data by adapting its format to the form most convinient for us. 
+Here, we loaded and merged the movies dataset (```movie.metadata.tsv```) with the plot summaries dataset (```plot_summaries.txt```). In the process, we removed all movies not containing a plot summary, as it is essential for our analysis. In addition, we enriched our dataset with the external datasets ```IMDb Dataset``` and the ```Reviews Dataset``` (see Additional Datasets). Furthermore, we preprocessed the data by adapting its format to the form most convinient for us. 
 
 ### Step 2: General Statistics about the Dataset
 
-The aim of this section is to explore the size of the dataset and get a sense of its scope. For this we started with an overview of the datasets number of movies and time-span coverage. We then evaluated the datasets' NaN's and outliers (invalid values). Finally, specifically for the countries and the genres of a movie, we regrouped the existing labels into broader categories (for the countries this translates into world regions).
+The aim of this section is to explore the size of the dataset and get a sense of its scope. For this we started with an overview of the datasets number of movies and time-span coverage. We then evaluated the datasets' NaN's and outliers (invalid values). Finally, specifically for the countries and the genres of a movie, we regrouped the existing labels into broader categories (for the countries this translates into ```world regions```).
 
 ### Step 3: Associating movies to historical events and movements using dictionaries
 
@@ -72,7 +72,7 @@ To measure the strength of the relationship between the different dictionaries w
 
 To further evaluate the quality of our dictionaires, we tested them on a selected sample of movies with known labels. For this we selected 10 movies per event, where we paid close attention to the fact that they should only correspond to a single event. 
 
-We evaluated the performance of our dictionaries by creating a confusion matrix, indicating the True positives, True negatives, False positives and False negatives of our results. We further performed a statistical evaluation, by calculating its accuracy, precision, recall, specificity and F1 score. 
+We evaluated the performance of our dictionaries by creating a ```confusion matrix```, indicating the True positives, True negatives, False positives and False negatives of our results. We further performed a statistical evaluation, by calculating its ```accuracy```, ```precision```, ```recall```, ```specificity``` and ```F1 score```. 
 
 ### Step 4: Diving into the Analysis of Events
 
@@ -84,7 +84,7 @@ In this section, we plot the count of movies for each event per year. This not o
 
 #### Number of Countries producing Movies about given Events
 
-In this section, we want to evaluate how many countries were affected by a certain event, that is, how many countries produced movies about that event. To analyse the difference between events and its magnitude, we calculated the coefficient of variation and the standard deviation. 
+In this section, we want to evaluate how many countries were affected by a certain event, that is, how many countries produced movies about that event. To analyse the difference between events and its magnitude, we calculated the ```coefficient of variation``` and the ```standard deviation```. 
 
 #### Box Office Revenue
 
@@ -92,7 +92,7 @@ In this section, we want to analyse the box office revenues average per event, a
 
 #### Rating
 
-In this section, we want to compare the different rating score averages of movies corresponding to different events. As a first step, we had to decide which dataset to use for the rating scores. We had two options: the IMDb Dataset and the Reviews Dataset. To decide this, we analysed the number of NaN's contained in both, and picked the one with less NaN's (the IMDb Dataset). The significance of the differences between events were evaluated by plotting 95% Confidance Intervals.
+In this section, we want to compare the different rating score averages of movies corresponding to different events. As a first step, we had to decide which dataset to use for the rating scores. We had two options: the ```IMDb Dataset``` and the ```Reviews Dataset```. To decide this, we analysed the number of NaN's contained in both, and picked the one with less NaN's (the ```IMDb Dataset```). The significance of the differences between events were evaluated by plotting 95% Confidance Intervals.
 
 #### Number of Rating Votes
 
@@ -122,9 +122,8 @@ Now that we have evaluated which methods we can use to measure the impacfulness 
 
 ## Proposed Timeline ⏳
 
-
-
-
+```
+.
 ├── 03.11.23 - Clear definition of project proposal and research questions
 │  
 ├── 10.11.23 - Perform first data processing and analysis
@@ -146,9 +145,9 @@ Now that we have evaluated which methods we can use to measure the impacfulness 
 ├── 22.12.23 - Milestone 3 submission deadline
 │  
 ├── 25.12.23 - Merry Christmas 🎁
+.
 
-
-
+```
 
 
 ## About our Team 👥
@@ -180,4 +179,4 @@ Now that we have evaluated which methods we can use to measure the impacfulness 
   </tr>
 </table>
 
->*Note*: every team member participated actively in many data processing and analysis. We distributed the tasks evenly among ourselves.
+>**Note**: every team member participated actively in many data processing and analysis. We distributed the tasks evenly among ourselves.
