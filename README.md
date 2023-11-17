@@ -76,10 +76,7 @@ To assess the impact of a particular event, specifically the number of countries
 
 #### Box Office Revenue, Rating, Rating Counts and Popularity
 
-To analyze the average box office revenues per event, reflecting audience attendance and the impact of content, we assessed differences between events by plotting ```95% confidence intervals```.
-
-
-We also created ```95% confidence interval``` plots to compare average rating scores, counts, and popularity for movies related to various events.
+To measure audience attendance and the impact of movies based on the events they represent, we decided to use ```95% confidence``` interval plots. This allows us to compare average rating scores, counts, popularity, and box office performance for movies associated with various events.
 
 #### Review Sentiment Analysis
 
