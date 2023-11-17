@@ -123,7 +123,7 @@ Now that we have evaluated which methods we can use to measure the impacfulness 
 ## Proposed Timeline ⏳
 
 
-.
+
 ├── 03.11.23 - Clear definition of project proposal and research questions
 │  
 ├── 10.11.23 - Perform first data processing and analysis
