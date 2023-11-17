@@ -70,9 +70,9 @@ To measure the strength of the relationship between the different dictionaries w
 
 #### Evaluation of Event Classification on a Test Set
 
-To further evaluate the quality of our dictionaires, we tested them on a selected sample of movies with known labels. For this we selected 10 movies per event, where we paid close attention to the fact that they should only correspond to a single event. 
+To further evaluate the quality of our dictionaries, we tested them on a selected sample of movies with known labels. For this, we chose 10 well-known movies per event from the internet and gathered them to create a sufficiently sized test set. 
 
-We evaluated the performance of our dictionaries by creating a ```confusion matrix```, indicating the True positives, True negatives, False positives and False negatives of our results. We further performed a statistical evaluation, by calculating its ```accuracy```, ```precision```, ```recall```, ```specificity``` and ```F1 score```. 
+We evaluated the performance of our dictionaries by creating a ```confusion matrix```, and further performed a statistical evaluation, by calculating ```accuracy```, ```precision```, ```recall```, ```specificity``` and ```F1 score```. 
 
 ### Step 4: Diving into the Analysis of Events
 
