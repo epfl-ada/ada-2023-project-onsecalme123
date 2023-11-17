@@ -73,7 +73,7 @@ To answer our research questions, we used a few datasets to enrich our data and 
 To be completed before the milestone 3 deadline
 
 
-## Proposed Timeline ⏳
+## Timeline ⏳
 
 ```
 .
@@ -103,7 +103,7 @@ To be completed before the milestone 3 deadline
 ```
 
 
-## Team's Organization 👥
+## About our Team 👥
 
 <table style="border-collapse: collapse; width: 100%;">
   <tr>
