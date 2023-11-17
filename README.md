@@ -52,7 +52,7 @@ To answer our research questions, we propose these two additional datasets:
 
 ### Step 1: Data Loading and Preprocessing
 
-Here, we loaded and merged the movies dataset (```movie.metadata.tsv```) with the plot summaries dataset (```plot_summaries.txt```). In the process, we removed all movies not containing a plot summary, as it is essential for our analysis. In addition, we enriched our dataset with the external datasets ```IMDb Dataset``` and the ```Reviews Dataset``` (see Additional Datasets). Furthermore, we preprocessed the data by adapting its format to the form most convinient for us. 
+Here, we loaded and merged the movies dataset (```movie.metadata.tsv```) with the plot summaries dataset (```plot_summaries.txt```). In the process, we removed all movies not containing a plot summary, as it is essential for our analysis. In addition, we enriched our dataset with the external datasets ```IMDb Dataset``` and the ```Reviews Dataset```. Furthermore, we preprocessed the data by adapting its format to the form most convinient for us. 
 
 ### Step 2: General Statistics about the Dataset
 
