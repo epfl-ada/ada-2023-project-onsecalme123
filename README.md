@@ -74,11 +74,10 @@ We plotted the annual movie count for each event, providing insights into event 
 
 To assess the impact of a particular event, specifically the number of countries producing movies about it, we analyzed variations and magnitudes between events by calculating the ```coefficient of variation``` and ```standard deviation```.
 
-#### Box Office Revenue
+#### Box Office Revenue, Rating, Rating Counts and Popularity
 
 To analyze the average box office revenues per event, reflecting audience attendance and the impact of content, we assessed differences between events by plotting ```95% confidence intervals```.
 
-#### Rating, Rating Counts and Popularity
 
 We also created ```95% confidence interval``` plots to compare average rating scores, counts, and popularity for movies related to various events.
 
