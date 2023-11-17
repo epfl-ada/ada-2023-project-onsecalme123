@@ -121,4 +121,4 @@ To be completed before the milestone 3 deadline
   </tr>
 </table>
 
->**Note**: every team member participated actively in many data processing and analysis and we distributed the tasks evenly among ourselves.
+>**Note**: every team member participated actively in many data processing and analysis. We distributed the tasks evenly among ourselves.
