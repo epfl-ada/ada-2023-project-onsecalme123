@@ -362,3 +362,17 @@ def plot_confusion_matrix(confusion_matrix):
     df_cm = pd.DataFrame(confusion_matrix, index=['Yes', 'No'], columns=['Positive', 'Negative']) 
     
     return sns.heatmap(df_cm, cmap='YlOrRd', annot=label, annot_kws={"size": 16}, cbar=False, fmt='')
+
+def numpy_helper(df, cols):
+    '''
+    Obtain a NumPy array from a specific subset columns of a DataFrame.
+
+    Parameters:
+    - df: pd.DataFrame with N rows
+    - cols: M column names 
+
+    Returns:
+    - np.array: corresponding NumPy array of shape (N, M), cast as a float
+    '''
+    
+    return df[cols].values.astype(float)
