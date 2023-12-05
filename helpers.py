@@ -230,7 +230,7 @@ def plot_events_over_years(movies_events, events, figures_per_row=4):
 
     axes = axes.flatten()
 
-    palette = sns.color_palette("husl", n_colors=len(events))
+    palette = sns.color_palette("colorblind", n_colors=len(events))
 
     for i, event in enumerate(events):
         row_idx = i // figures_per_row
@@ -328,7 +328,7 @@ def pca_plot(features_df, target_df, ax):
     
     for category in df_pca['Target'].unique():
         subset = df_pca[df_pca['Target'] == category]
-        ax.scatter(subset['PC1'], subset['PC2'], label = category, alpha=0.8)
+        ax.scatter(subset['PC1'], subset['PC2'], hue = 'Target', palette = 'colorblind', label = category, alpha=0.8)
 
     ax.set_xlabel('Principal Component 1 (PC1)')
     ax.set_ylabel('Principal Component 2 (PC2)')
@@ -340,10 +340,11 @@ def scatter_plot_according_events(df, x_column, y_column, axes, events, label):
     """
     
     axes = axes.flatten()
+    palette = sns.color_palette('colorblind', n_colors=len(events))
 
     for i, event in enumerate(events):
         event_specific_df = movie_affected_to_event(df, event)
-        sns.regplot(x = x_column, y = y_column, data = event_specific_df, ax = axes[i], scatter_kws = {'alpha':0.2}, label = label)
+        sns.regplot(x = x_column, y = y_column, data = event_specific_df, ax = axes[i], scatter_kws = {'alpha':0.2}, color = palette[i], label = label)
         axes[i].set_title(event)
         axes[i].legend(loc = 'upper left')
         axes[i].set_xlabel('')
