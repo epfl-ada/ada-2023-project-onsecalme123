@@ -9,6 +9,10 @@ id_wiki,id_freebase,name,date,true_event
 73368,/m/0jq1x,The Big Parade,1925,['WW1']
 62097,/m/0gsx1,Grand Illusion,1937,['WW1']
 23255,/m/05sjq,Paths of Glory,1957,['WW1']
+27754718,/m/0cc5qkt,War Horse,2011.0,['WW1']
+8368715,/m/0270_nb,Johnny Got His Gun,1971.0,['WW1']
+1205027,/m/04h4c9,A Very Long Engagement,2004.0,['WW1']
+3092405,/m/08qwy4,Merry Christmas,2005.0,['WW1']
 57585,/m/0ft18,Casablanca,1942-11-26,['WW2']
 4492505,/m/0c5d5j,Come and See,1985,['WW2']
 8994,/m/02h22,Das Boot,1981-09-17,['WW2']
@@ -19,6 +23,9 @@ id_wiki,id_freebase,name,date,true_event
 65834,/m/0hfzr,Schindler's List,1993-11-30,['WW2']
 42159,/m/0bl5c,The Best Years of Our Lives,1946,['WW2']
 42856,/m/0bs4r,The Bridge on the River Kwai,1957-10-02,['WW2']
+142465,/m/011ysn,The Thin Red Line,1998.0,['WW2']
+181229,/m/018rvr,The Great Escape,1963.0,['WW2']
+99454,/m/0pd4f,Patton,1970.0,['WW2']
 142417,/m/011yd2,Apollo 13,1995-06-22,['Space']
 113442,/m/0sxgv,The Right Stuff,1983-10-21,['Space']
 1110047,/m/046vs6,October Sky,1999-02-19,['Space']
@@ -29,6 +36,10 @@ id_wiki,id_freebase,name,date,true_event
 103325,/m/0q23s,Royal Space Force: The Wings of Honneamise,2004-11-12,"['Space', 'Cold War']"
 1722156,/m/05r3qc,Space Cowboys,2000.0,['Space']
 379851,/m/021fvl,The Dish,2000.0,['Space']
+1619604,/m/05h6v8,Marooned,1969.0,['Space']
+10543866,/m/02qhcj5,In the Shadow of the Moon,2007.0,['Space']
+5541680,/m/0drp1s,Race to Space,2002.0,['Space']
+878670,/m/03l29p,First Men in the Moon,1964.0,['Space']
 464883,/m/02crgz,Miracle,2004-02-06,['Cold War']
 1129041,/m/048scx,Thirteen Days,2000-12-16,['Cold War']
 37241569,/m/0n53wvj,Cold War,2012-11-08,['Cold War']
@@ -39,6 +50,9 @@ id_wiki,id_freebase,name,date,true_event
 58147,/m/0fy66,The Manchurian Candidate,1962-10-24,['Cold War']
 8695,/m/02dwj,Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,1964-01-29,"['Cold War', 'Atomic Bomb']"
 9378717,/m/0286hyp,The Spy Who Came in from the Cold,1965.0,['Cold War']
+470185,/m/02dcrt,Three Days of the Condor,1975.0,['Cold War']
+16613205,/m/03yf02f,The Tunnel,1935.0,['Cold War']
+3557540,/m/09ldwy,The Hunt for Red October,1990.0,['Cold War']
 18951054,/m/0jzw,Apocalypse Now,1979-05-10,['Vietnam War']
 11701,/m/0333t,Full Metal Jacket,1987-06-17,['Vietnam War']
 1011468,/m/03z106,We Were Soldiers,2002-02-25,['Vietnam War']
@@ -49,6 +63,9 @@ id_wiki,id_freebase,name,date,true_event
 103011,/m/0p_qr,Coming Home,1978-02-15,"['Vietnam War', 'Mental Health']"
 1546168,/m/0599rp,Heaven & Earth,1993-12-13,['Vietnam War']
 113460,/m/0sxmx,Platoon,1986-12-19,['Vietnam War']
+73425,/m/0jqj5,The Deer Hunter,1978.0,['Vietnam War']
+4457806,/m/02p86pb,Born on the Fourth of July,1989.0,['Vietnam War']
+226682,/m/01h1cp,Casualties of War,1989.0,['Vietnam War']
 1164646,/m/04cq1k,Iron Jawed Angels,2004-01-16,['Women emancipation']
 390693,/m/022npf,Born in Flames,1983,['Women emancipation']
 25594421,/m/09rvcvl,Made in Dagenham,2010-09-11,['Women emancipation']
@@ -59,16 +76,22 @@ id_wiki,id_freebase,name,date,true_event
 176762,/m/017zss,Whale Rider,2002-09-09,['Women emancipation']
 444267,/m/0296vv,Legally Blonde,2001-06-26,['Women emancipation']
 249876,/m/01l2b3,Bend It Like Beckham,2002-04-11,['Women emancipation']
+106117,/m/026390q,Thelma & Louise,1991.0,['Women emancipation']
+3185575,/m/08xvpn,The Color Purple,1985.0,"['Women emancipation', 'Black History']"
+689785,/m/032_br,The Accused,1988.0,['Women emancipation']
 300972,/m/01rwyq,Malcolm X,1992-11-18,['Black History']
 73428,/m/0jqkh,Do the Right Thing,1989-05,['Black History']
 29454281,/m/0ds3t5x,The Help,2011-08-10,['Black History']
 225487,/m/01gvwd,Claudine,1974,['Black History']
 2084045,/m/06l2pj,Crooklyn,1994-05-13,['Black History']
-155997,/m/014gcy,Boyz N the Hood,1991-07-02,"['Black History', 'Drug Abuse']"
+155997,/m/014gcy,Boyz N the Hood,1991-07-02,"['Black History', 'Opioid Crisis']"
 1073955,/m/043ncp,Soul Food,1997-09-26,['Black History']
 19032190,/m/09rsjpv,Red Tails,2012-01-20,"['Black History', 'WW2']"
 397574,/m/023gxx,Remember the Titans,2000-09-23,['Black History']
 509676,/m/02jxbw,Glory,1989.0,['Black History']
+4770345,/m/0cmdm1,Get on the Bus,1996.0,['Black History']
+707823,/m/034hzj,Cry Freedom,1987.0,['Black History']
+3947481,/m/0b83jp,The Great Debaters,2007.0,['Black History']
 23941708,/m/08ct6,2001: A Space Odyssey,1968-04-06,['Digitalisation']
 30007,/m/07cz2,The Matrix,1999-03-31,['Digitalisation']
 34344124,/m/07gp9,Terminator 2: Judgment Day,1991-07-01,['Digitalisation']
@@ -79,6 +102,9 @@ id_wiki,id_freebase,name,date,true_event
 306195,/m/01sk1v,The Net,1995-07-28,['Digitalisation']
 49696,/m/0d6b7,Metropolis,1927-01-10,['Digitalisation']
 4338909,/m/0bxy6l,Countdown,1987-03-14,['Digitalisation']
+24319139,/m/07s846j,The Social Network,2010.0,['Digitalisation']
+1438861,/m/051n5m,The Thirteenth Floor,1999.0,['Digitalisation']
+264176,/m/01n4z6,Hackers,1995.0,['Digitalisation']
 4838538,/m/0cqbfc,Summer with Monika,1953,['Sexuality']
 44122,/m/0c0zq,American Beauty,1999-09-08,['Sexuality']
 1988806,/m/06c753,Lolita,1997-09-27,['Sexuality']
@@ -89,6 +115,10 @@ id_wiki,id_freebase,name,date,true_event
 1897341,/m/064lsn,The Pianist,2002-05-24,"['Sexuality', 'WW2']"
 28075240,/m/0cmc26r,A Dangerous Method,2011-09-02,"['Sexuality', 'Mental Health']"
 195388,/m/01brqv,Y tu mamá también,2001-06-08,['Sexuality']
+2557469,/m/07mwp6,Killing Me Softly,2002.0,['Sexuality']
+163456,/m/015qrk,Last Tango in Paris,1972.0,['Sexuality']
+1508787,/m/056tj0,9 Songs,2004.0,['Sexuality']
+9979,/m/02qcr,Eyes Wide Shut,1999.0,['Sexuality']
 615418,/m/02ww1t,Kids,1995-05,"['STDs', 'Sexuality']"
 6256985,/m/0fz68f,Teenage Caveman,2002,['STDs']
 28194808,/m/0cnx21r,Black Venus,2010-09,['STDs']
@@ -99,16 +129,22 @@ id_wiki,id_freebase,name,date,true_event
 543162,/m/02nczh,Boys Don't Cry,1999-09-02,"['STDs', 'LGBTQ']"
 13699003,/m/03cffvv,And the Band Played On,1993-09-11,"['STDs', 'LGBTQ']"
 1367539,/m/04x4rr,Longtime Companion,1989-10,"['STDs', 'LGBTQ']"
-37599,/m/09cr8,Traffic,2001-01-05,['Drug Abuse']
-23830211,/m/07k2mq,Requiem for a Dream,2000-10-27,['Drug Abuse']
-3182907,/m/08xnxg,The Basketball Diaries,1995-04-21,['Drug Abuse']
-105434,/m/0qf2t,Trainspotting,1996-02-23,['Drug Abuse']
-5842075,/m/0f8j13,Fear and Loathing in Las Vegas,1998-05-15,['Drug Abuse']
-1611072,/m/05gjj1,A Scanner Darkly,2006-07-07,['Drug Abuse']
-2470904,/m/07gb81,28 Days,2000-02-08,['Drug Abuse']
-1380618,/m/04y2j6,Permanent Midnight,1998-09-16,['Drug Abuse']
-2244939,/m/06yv1n,Clean and Sober,1988,['Drug Abuse']
-6179073,/m/0fvcx9,Less Than Zero,1987-11-06,['Drug Abuse']
+171540,/m/0170th,The People vs. Larry Flynt,1996.0,['STDs']
+593921,/m/02tgd2,The Pillow Book,1996.0,"['STDs', 'Sexuality']"
+1105412,/m/046f3p,Kinsey,2004.0,"['STDs', 'Sexuality']"
+37599,/m/09cr8,Traffic,2001-01-05,['Opioid Crisis']
+23830211,/m/07k2mq,Requiem for a Dream,2000-10-27,['Opioid Crisis']
+3182907,/m/08xnxg,The Basketball Diaries,1995-04-21,['Opioid Crisis']
+105434,/m/0qf2t,Trainspotting,1996-02-23,['Opioid Crisis']
+5842075,/m/0f8j13,Fear and Loathing in Las Vegas,1998-05-15,['Opioid Crisis']
+1611072,/m/05gjj1,A Scanner Darkly,2006-07-07,['Opioid Crisis']
+2470904,/m/07gb81,28 Days,2000-02-08,['Opioid Crisis']
+1380618,/m/04y2j6,Permanent Midnight,1998-09-16,['Opioid Crisis']
+2244939,/m/06yv1n,Clean and Sober,1988,['Opioid Crisis']
+6179073,/m/0fvcx9,Less Than Zero,1987-11-06,['Opioid Crisis']
+96893,/m/0n_hp,Blow,2001.0,['Opioid Crisis']
+291610,/m/01qncf,Drugstore Cowboy,1989.0,['Opioid Crisis']
+265975,/m/01ndgk,Sid and Nancy,1986.0,['Opioid Crisis']
 54160,/m/0f4vx,Leaving Las Vegas,1995-09-15,['Mental Health']
 33502433,/m/0h95927,The Silver Linings Playbook,2012-11-21,['Mental Health']
 3383952,/m/098s2w,"Girl, Interrupted",1999-12-08,['Mental Health']
@@ -119,6 +155,9 @@ id_wiki,id_freebase,name,date,true_event
 12685170,/m/02x0fs9,Lars and the Real Girl,2007-09-10,['Mental Health']
 9114950,/m/027y5ys,Fight Club - Members Only,2006-02-17,['Mental Health']
 24480838,/m/09k56b7,Black Swan,2010-09-01,['Mental Health']
+21913863,/m/07xtqq,One Flew Over the Cuckoo's Nest,1975.0,['Mental Health']
+983692,/m/03wlrb,Sybil,1976.0,['Mental Health']
+571311,/m/02r6sh,An Angel at My Table,1990.0,['Mental Health']
 123464,/m/0x2j1,Fail-Safe,1964-10-07,"['Atomic Bomb', 'Cold War']"
 993867,/m/03xj57,By Dawn's Early Light,1990-05-19,"['Atomic Bomb', 'Cold War']"
 936429,/m/03rk23,Miracle Mile,1988-09-11,['Atomic Bomb']
@@ -129,6 +168,9 @@ id_wiki,id_freebase,name,date,true_event
 18735140,/m/04gppzp,Barefoot Gen,1983,"['Atomic Bomb', 'WW2']"
 31629,/m/07sc1,Threads,1984,"['Atomic Bomb', 'Cold War']"
 779536,/m/03bq6g,Fat Man and Little Boy,1989.0,"['Atomic Bomb', 'WW2']"
+10705512,/m/02qmrw4,On the Beach,1959.0,['Atomic Bomb']
+920062,/m/03pzxn,Special Bulletin,1983.0,"['Atomic Bomb', 'Terrorism']"
+164365,/m/015wf0,The China Syndrome,1979.0,['Atomic Bomb']
 30340901,/m/0gwm_wy,Elysium,2013-03-01,['Genetic Engineering']
 146947,/m/012s1d,Spider-Man,2002-05-03,['Genetic Engineering']
 42886,/m/0bscw,Gattaca,1997-09-07,['Genetic Engineering']
@@ -139,6 +181,9 @@ id_wiki,id_freebase,name,date,true_event
 14899108,/m/02qr2tx,Splice,2009-10-06,['Genetic Engineering']
 456601,/m/02bqxb,The Fly,1986-08-15,"['Genetic Engineering', 'Digitalisation']"
 1168522,/m/04d0ng,Mimic,1997-08-22,['Genetic Engineering']
+28954658,/m/0dgrv5m,Sharktopus,2010.0,['Genetic Engineering']
+27279709,/m/0btyf5z,Rise of the Planet of the Apes,2011.0,['Genetic Engineering']
+28370997,/m/0crj7yz,Hanna,2011.0,['Genetic Engineering']
 3146002,/m/08vd2q,Sunday Bloody Sunday,1971,['LGBTQ']
 61664,/m/0gpx6,All About My Mother,1999-04-08,"['LGBTQ', 'STDs']"
 1856185,/m/061dj0,Jeffrey,1995,"['LGBTQ', 'STDs']"
@@ -149,6 +194,10 @@ id_wiki,id_freebase,name,date,true_event
 455013,/m/02bk82,The Boys in the Band,1970-03-17,['LGBTQ']
 468293,/m/02d41336193,Philadelphia,1993,"['LGBTQ', 'STDs']"
 239589,/m/01jrbv,The Birdcage,1996.0,['LGBTQ']
+1428955,/m/050t99,My Beautiful Laundrette,1985.0,['LGBTQ']
+31653535,/m/0gf8q8p,Tomboy,2011.0,['LGBTQ']
+171555,/m/0170xl,Gods and Monsters,1998.0,['LGBTQ']
+33025020,/m/0fpmrmq,Pariah,2011.0,['LGBTQ']
 1891886,/m/0645k5,V for Vendetta,2006-02-13,['Terrorism']
 34953010,/m/0j43swk,Zero Dark Thirty,2012-12-19,['Terrorism']
 15497901,/m/03mc6yp,The Baader Meinhof Complex,2008-09-25,['Terrorism']
@@ -159,3 +208,6 @@ id_wiki,id_freebase,name,date,true_event
 3634311,/m/09r94m,United 93,2006-04-28,['Terrorism']
 106328,/m/0qm8b,Black Hawk Down,2001-12-18,['Terrorism']
 2174599,/m/06sfk6,The Siege,1998-11-06,['Terrorism']
+9551038,/m/02pjnwh,Black Sunday,1977.0,['Terrorism']
+5958413,/m/0fgm_l,A Mighty Heart,2007.0,['Terrorism']
+2983983,/m/08hppl,Paradise Now,2005.0,['Terrorism']
