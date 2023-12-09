@@ -87,7 +87,7 @@ black_history_test_set = pd.DataFrame({
     'date': ['1992-11-18', '1989-05', '2011-08-10', '1974', '1994-05-13', '1991-07-02', '1997-09-26', '2012-01-20', '2000-09-23', '1989.0', '1996.0', '1987.0', '2007.0']
 })
 black_history_test_set['true_event'] = [['Black History'] for el in range(len(black_history_test_set))]
-black_history_test_set['true_event'][5].append('Opioid Crisis')
+black_history_test_set['true_event'][5].append('Drug Abuse')
 black_history_test_set['true_event'][7].append('WW2')
 
 
@@ -135,15 +135,15 @@ stds_test_set['true_event'][11].append('Sexuality')
 stds_test_set['true_event'][12].append('Sexuality')
 
 
-# Test subset for Opioid Crisis
+# Test subset for Drug Abuse
 
-opioid_crisis_test_set = pd.DataFrame({
+drug_abuse_test_set = pd.DataFrame({
     'id_wiki': [37599, 23830211, 3182907, 105434, 5842075, 1611072, 2470904, 1380618, 2244939, 6179073, 96893, 291610, 265975],
     'id_freebase': ['/m/09cr8', '/m/07k2mq', '/m/08xnxg', '/m/0qf2t', '/m/0f8j13', '/m/05gjj1', '/m/07gb81', '/m/04y2j6', '/m/06yv1n', '/m/0fvcx9', '/m/0n_hp', '/m/01qncf',  '/m/01ndgk'],
     'name': ['Traffic', 'Requiem for a Dream', 'The Basketball Diaries', 'Trainspotting', 'Fear and Loathing in Las Vegas', 'A Scanner Darkly', '28 Days', 'Permanent Midnight', 'Clean and Sober', 'Less Than Zero', 'Blow', 'Drugstore Cowboy', 'Sid and Nancy'],
     'date': ['2001-01-05', '2000-10-27', '1995-04-21', '1996-02-23', '1998-05-15', '2006-07-07', '2000-02-08', '1998-09-16', '1988', '1987-11-06', '2001.0', '1989.0', '1986.0']
 })
-opioid_crisis_test_set['true_event'] = [['Opioid Crisis'] for el in range(len(opioid_crisis_test_set))]
+drug_abuse_test_set['true_event'] = [['Drug Abuse'] for el in range(len(drug_abuse_test_set))]
 
 
 # Test subset for Mental Health
@@ -217,7 +217,7 @@ terrorism_test_set['true_event'] = [['Terrorism'] for el in range(len(terrorism_
 
 # Concatenating all these test sets into one big dataframe
 
-movies_test_set = pd.concat([ww1_test_set, ww2_test_set, space_exploration_test_set, cold_war_test_set, vietnam_war_test_set, women_emancipation_test_set, black_history_test_set, digitalization_test_set, sexuality_test_set, stds_test_set, opioid_crisis_test_set, mental_health_test_set, atomic_bomb_test_set, genetic_engineering_test_set, lgbtq_test_set, terrorism_test_set], ignore_index = True)
+movies_test_set = pd.concat([ww1_test_set, ww2_test_set, space_exploration_test_set, cold_war_test_set, vietnam_war_test_set, women_emancipation_test_set, black_history_test_set, digitalization_test_set, sexuality_test_set, stds_test_set, drug_abuse_test_set, mental_health_test_set, atomic_bomb_test_set, genetic_engineering_test_set, lgbtq_test_set, terrorism_test_set], ignore_index = True)
 
 
 # Create a .csv file containing the movies test set
