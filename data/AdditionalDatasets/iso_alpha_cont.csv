@@ -1,0 +1,186 @@
+country,iso_alpha,Continent
+Afghanistan,AFG,Asia
+Albania,ALB,Europe
+Algeria,DZA,Africa
+Angola,AGO,Africa
+Argentina,ARG,South America
+Australia,AUS,Oceania
+Austria,AUT,Europe
+Bahrain,BHR,Asia
+Bangladesh,BGD,Asia
+Belgium,BEL,Europe
+Benin,BEN,Africa
+Bolivia,BOL,South America
+Bosnia and Herzegovina,BIH,Europe
+Botswana,BWA,Africa
+Brazil,BRA,South America
+Bulgaria,BGR,Europe
+Burkina Faso,BFA,Africa
+Burundi,BDI,Africa
+Cambodia,KHM,Asia
+Cameroon,CMR,Africa
+Canada,CAN,North America
+Central African Republic,CAF,Africa
+Chad,TCD,Africa
+Chile,CHL,South America
+China,CHN,Asia
+Colombia,COL,South America
+Comoros,COM,Africa
+"Congo, Dem. Rep.",COD,Africa
+"Congo, Rep.",COG,Africa
+Costa Rica,CRI,North America
+Cote d'Ivoire,CIV,Africa
+Croatia,HRV,Europe
+Cuba,CUB,North America
+Czech Republic,CZE,Europe
+Denmark,DNK,Europe
+Djibouti,DJI,Africa
+Dominican Republic,DOM,North America
+Ecuador,ECU,South America
+Egypt,EGY,Africa
+El Salvador,SLV,North America
+Equatorial Guinea,GNQ,Africa
+Eritrea,ERI,Africa
+Ethiopia,ETH,Africa
+Finland,FIN,Europe
+France,FRA,Europe
+Gabon,GAB,Africa
+Gambia,GMB,Africa
+Germany,DEU,Europe
+Ghana,GHA,Africa
+Greece,GRC,Europe
+Guatemala,GTM,North America
+Guinea,GIN,Africa
+Guinea-Bissau,GNB,Africa
+Haiti,HTI,North America
+Honduras,HND,North America
+Hong Kong,HKG,Asia
+Hungary,HUN,Europe
+Iceland,ISL,Europe
+India,IND,Asia
+Indonesia,IDN,Asia
+Iran,IRN,Asia
+Iraq,IRQ,Asia
+Ireland,IRL,Europe
+Israel,ISR,Asia
+Italy,ITA,Europe
+Jamaica,JAM,North America
+Japan,JPN,Asia
+Jordan,JOR,Asia
+Kenya,KEN,Africa
+"Korea, Rep.",KOR,Asia
+"Korea, Dem. Rep.",KOR,Asia
+Kuwait,KWT,Asia
+Lebanon,LBN,Asia
+Lesotho,LSO,Africa
+Liberia,LBR,Africa
+Libya,LBY,Africa
+Madagascar,MDG,Africa
+Malawi,MWI,Africa
+Malaysia,MYS,Asia
+Mali,MLI,Africa
+Mauritania,MRT,Africa
+Mauritius,MUS,Africa
+Mexico,MEX,North America
+Mongolia,MNG,Asia
+Montenegro,MNE,Europe
+Morocco,MAR,Africa
+Mozambique,MOZ,Africa
+Myanmar,MMR,Asia
+Namibia,NAM,Africa
+Nepal,NPL,Asia
+Netherlands,NLD,Europe
+New Zealand,NZL,Oceania
+Nicaragua,NIC,North America
+Niger,NER,Africa
+Nigeria,NGA,Africa
+Norway,NOR,Europe
+Oman,OMN,Asia
+Pakistan,PAK,Asia
+Panama,PAN,North America
+Paraguay,PRY,South America
+Peru,PER,South America
+Philippines,PHL,Asia
+Poland,POL,Europe
+Portugal,PRT,Europe
+Puerto Rico,PRI,North America
+Reunion,REU,Africa
+Romania,ROU,Europe
+Rwanda,RWA,Africa
+Sao Tome and Principe,STP,Africa
+Saudi Arabia,SAU,Asia
+Senegal,SEN,Africa
+Serbia,SRB,Europe
+Sierra Leone,SLE,Africa
+Singapore,SGP,Asia
+Slovak Republic,SVK,Europe
+Slovenia,SVN,Europe
+Somalia,SOM,Africa
+South Africa,ZAF,Africa
+Spain,ESP,Europe
+Sri Lanka,LKA,Asia
+Sudan,SDN,Africa
+Swaziland,SWZ,Africa
+Sweden,SWE,Europe
+Switzerland,CHE,Europe
+Syria,SYR,Asia
+Taiwan,TWN,Asia
+Tanzania,TZA,Africa
+Thailand,THA,Asia
+Togo,TGO,Africa
+Trinidad and Tobago,TTO,North America
+Tunisia,TUN,Africa
+Turkey,TUR,Asia
+Uganda,UGA,Africa
+United Kingdom,GBR,Europe
+United States,USA,North America
+Uruguay,URY,South America
+Venezuela,VEN,South America
+Vietnam,VNM,Asia
+West Bank and Gaza,PSE,Asia
+"Yemen, Rep.",YEM,Asia
+Zambia,ZMB,Africa
+Zimbabwe,ZWE,Africa
+Cyprus,CYP,Asia
+Azerbaijan,AZE,Asia
+Nazi Germany,DEU,Europe
+Luxembourg,LUX,Europe
+Estonia,EST,Europe
+Serbia and Montenegro,SCG,Europe
+Soviet Union,SUN,Europe
+Republic of Macedonia,MKD,Europe
+Bhutan,BTN,Asia
+Palestinian territories,PSE,Asia
+Macau,MAC,Asia
+Korea,KOR,Asia
+United States of America,USA,North America
+Georgia,GEO,Asia
+Palestinian Territories,PSE,Asia
+Congo,COD,Africa
+United Arab Emirates,ARE,Asia
+Slovakia,SVK,Europe
+Northern Ireland,GBR,Europe
+Isle of Man,IMN,Europe
+Wales,GBR,Europe
+Hong Kong,HKG,Asia
+Bahamas,BHS,North America
+Ukraine,UKR,Europe
+Weimar Republic,DEU,Europe
+West Germany,DEU,Europe
+Turkmenistan,TKM,Asia
+Russia,RUS,Europe
+Monaco,MCO,Europe
+Qatar,QAT,Asia
+Republic of China,TWN,Asia
+Czechoslovakia,CSK,Europe
+Scotland,GBR,Europe
+Georgian SSR,GSS,Asia
+Uzbek SSR,UZS,Asia
+Kingdom of Great Britain,GBR,Europe
+Malta,MLT,Europe
+South Korea,KOR,Asia
+Lithuania,LTU,Europe
+Mandatory Palestine,PSE,Asia
+England,GBR,Europe
+Kingdom of Italy,ITA,Europe
+Socialist Federal Republic of Yugoslavia,YUG,Europe
