@@ -401,3 +401,40 @@ def custom_list_agg(series):
     
     else:
         return list(unique_values)
+
+
+def compute_averages_and_cis(events, columns_to_compare, movies_events_df):
+    """
+    Compute averages and confidence intervals for specified columns in a DataFrame.
+
+    Parameters:
+    - events (list): List of events.
+    - columns_to_compare (list): List of columns to compute averages and confidence intervals for.
+    - movies_events_df (pd.DataFrame): DataFrame containing movie events data.
+
+    Returns:
+    - all_averages (dict): Dictionary containing lists of averages for each column.
+    - lower_bounds (dict): Dictionary containing lists of lower bounds of confidence intervals for each column.
+    - upper_bounds (dict): Dictionary containing lists of upper bounds of confidence intervals for each column.
+    """
+    
+    all_averages = {col: [] for col in columns_to_compare}
+    all_conf_intervals = {col: [] for col in columns_to_compare}
+
+    for element in events:
+        element_events = movie_affected_to_event(movies_events_df, element)
+
+        for col in columns_to_compare:
+            element_data = element_events[col].copy()
+            element_data_cleaned = element_data.dropna()
+
+            avg = element_data_cleaned.mean()
+            conf_interval = stats.t.interval(0.95, len(element_data_cleaned) - 1, loc=avg, scale=stats.sem(element_data_cleaned))
+
+            all_averages[col].append(avg)
+            all_conf_intervals[col].append(conf_interval)
+    
+    lower_bounds = {col: [interval[0] for interval in intervals] for col, intervals in all_conf_intervals.items()}
+    upper_bounds = {col: [interval[1] for interval in intervals] for col, intervals in all_conf_intervals.items()}
+
+    return all_averages, lower_bounds, upper_bounds
