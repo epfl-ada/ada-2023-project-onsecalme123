@@ -301,13 +301,15 @@ def compute_common_words_ratio(text, word_list):
     return ratio
 
 
-def add_common_words_ratio(df, column_name, words_list_1, words_list_2):
+def add_common_words_scores(df, column_name, words_list_1, words_list_2):
     """
     Add a column to each DataFrame with the ratio of common words.
     """
 
-    df[f'positive_emotion_ratio_{column_name}'] = df[column_name].apply(lambda x: compute_common_words_ratio(x, words_list_1))
-    df[f'negative_emotion_ratio_{column_name}'] = df[column_name].apply(lambda x: compute_common_words_ratio(x, words_list_2))
+    df[f'positive_emotion_ratio_{column_name}'] = df[column_name].apply(lambda x: 
+                                                                        compute_common_words_ratio(x, words_list_1) * 100)
+    df[f'negative_emotion_ratio_{column_name}'] = df[column_name].apply(lambda x: 
+                                                                        compute_common_words_ratio(x, words_list_2) * 100)
     
     return df
 
@@ -328,7 +330,7 @@ def pca_plot(features_df, target_df, ax):
     
     for category in df_pca['Target'].unique():
         subset = df_pca[df_pca['Target'] == category]
-        ax.scatter(subset['PC1'], subset['PC2'], hue = 'Target', palette = 'colorblind', label = category, alpha=0.8)
+        ax.scatter(subset['PC1'], subset['PC2'], label = category, alpha=0.8)
 
     ax.set_xlabel('Principal Component 1 (PC1)')
     ax.set_ylabel('Principal Component 2 (PC2)')
@@ -364,6 +366,7 @@ def plot_confusion_matrix(confusion_matrix):
     
     return sns.heatmap(df_cm, cmap='YlOrRd', annot=label, annot_kws={"size": 16}, cbar=False, fmt='')
 
+
 def numpy_helper(df, cols):
     '''
     Obtain a NumPy array from a specific subset columns of a DataFrame.
@@ -377,3 +380,24 @@ def numpy_helper(df, cols):
     '''
     
     return df[cols].values.astype(float)
+
+
+def custom_list_agg(series):
+    '''
+    Custom aggregation function for pandas DataFrame groupby.
+
+    Parameters:
+    - series (pandas.Series): A pandas Series representing a column of a DataFrame.
+
+    Returns:
+    - Union[Any, List[Any]]: If the series has only one unique value, the value is returned as-is.
+      If there are multiple unique values, a list of unique values is returned.
+    '''
+    
+    unique_values = series.unique()
+    
+    if len(unique_values) == 1:
+        return unique_values[0]
+    
+    else:
+        return list(unique_values)
