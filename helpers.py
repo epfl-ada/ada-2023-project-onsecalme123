@@ -342,15 +342,16 @@ def scatter_plot_according_events(df, x_column, y_column, axes, events, label):
     """
     
     axes = axes.flatten()
-    palette = sns.color_palette('colorblind', n_colors=len(events))
 
     for i, event in enumerate(events):
         event_specific_df = movie_affected_to_event(df, event)
-        sns.regplot(x = x_column, y = y_column, data = event_specific_df, ax = axes[i], scatter_kws = {'alpha':0.2}, color = palette[i], label = label)
+        sns.regplot(x = x_column, y = y_column, data = event_specific_df, ax = axes[i], scatter=False, label = label)
+        
         axes[i].set_title(event)
         axes[i].legend(loc = 'upper left')
-        axes[i].set_xlabel('')
-        axes[i].set_ylabel('')
+        axes[i].set_xlabel('Years')
+        axes[i].set_ylabel('Emotion scores')
+        #axes[i].set_yscale('log')
 
 
 def plot_confusion_matrix(confusion_matrix):
