@@ -74,7 +74,7 @@ genetic_engineering_dict = ['genetic', 'gene', 'genes', 'dna', 'genome', 'biotec
 
 # LGBTQIA+ dictionary
 
-lgbtq_dict = ['gay', 'gays', 'lesbians' 'lesbian', 'lgbt pride', 'bisexual', 'bisexuality', 'bisexuals', 'drag queen', 'transexual', 'marriage equality',  'homosexual', 'homosexual', 'coming out', 'homosexual rights', 'aids stigma', 'non binary', 'queer', 'freddie mercury', 'lgbtq+', 'two-spirit', 'transphobia', 'gender identity', 'lgbtqia+', 'transgender', 'gender fluid', 'gender fluidity' 'asexual', 'pansexual', 'same-sex marriage', 'transsexual', 'non-binary', 'bisexuality', 'homosexuality', 'transsexuality', 'homophobia', 'homophobic', 'homophobe', 'gender dysphoria', 'stonewall', 'lgbt', 'lgbtq', 'sexual orientation', 'drag show','drag performance', 'sex change', 'gender affirming surgery', 'pride', 'pansexuality', 'asexuality', 'gender', 'drag queen']
+lgbtq_dict = ['gay', 'gays', 'lesbians', 'lesbian', 'lgbt pride', 'bisexual', 'bisexuality', 'bisexuals', 'drag queen', 'transexual', 'marriage equality',  'homosexual', 'homosexual', 'coming out', 'homosexual rights', 'aids stigma', 'non binary', 'queer', 'freddie mercury', 'lgbtq+', 'two-spirit', 'transphobia', 'gender identity', 'lgbtqia+', 'transgender', 'gender fluid', 'gender fluidity' 'asexual', 'pansexual', 'same-sex marriage', 'transsexual', 'non-binary', 'bisexuality', 'homosexuality', 'transsexuality', 'homophobia', 'homophobic', 'homophobe', 'gender dysphoria', 'stonewall', 'lgbt', 'lgbtq', 'sexual orientation', 'drag show','drag performance', 'sex change', 'gender affirming surgery', 'pride', 'pansexuality', 'asexuality', 'gender', 'drag queen']
 
 
 # Terrorism dictionary
@@ -83,7 +83,8 @@ terrorism_dict = ['terrorism', 'terrorist', 'terrorist attack', 'suicide bombing
 
 # List of events/movements and list of associated dictionaries
 
-events = ['WW1', 'WW2', 'Space', 'Cold War', 'Vietnam War', 'Women emancipation', 'Black History', 'Digitalisation', 'Sexuality', 'STDs', 'Drug Abuse', 'Mental Health', 'Atomic Bomb', 'Genetic Engineering', 'LGBTQ', 'Terrorism' ]
+events = ['WW1', 'WW2', 'Space Exploration', 'Cold War', 'Vietnam War', 'Women Emancipation', 'Black History', 'Digital Revolution', 'Sexuality', 'STDs', 'Drug Abuse', 'Mental Health', 'Atomic Bomb', 'Genetic Engineering', 'LGBTQ', 'Terrorism']
+
 dictionaries = [ww1_dict, ww2_dict, space_dict, cold_war_dict, vietnam_war_dict, women_emancipation_dict, black_history_dict, digitalisation_dict, sexuality_dict, STDs_dict, drug_abuse_dict, mental_health_dict, atomic_bomb_dict, genetic_engineering_dict, lgbtq_dict, terrorism_dict]
 new_dictionaries = []
 

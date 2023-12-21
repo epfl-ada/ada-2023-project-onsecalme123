@@ -33,7 +33,7 @@ space_exploration_test_set = pd.DataFrame({
     'name': ['Apollo 13', 'The Right Stuff', 'October Sky', 'From the Earth to the Moon', 'The Mouse on the Moon', 'Destination Moon', 'G.O.R.A.', 'Royal Space Force: The Wings of Honneamise', 'Space Cowboys', 'The Dish', 'Marooned', 'In the Shadow of the Moon', 'Race to Space', 'First Men in the Moon'],
     'date': ['1995-06-22', '1983-10-21', '1999-02-19', '1958', '1963', '1950-06-27', '1968', '2004-11-12', '2000.0', '2000.0', '1969.0', '2007.0', '2002.0', '1964.0']
 })
-space_exploration_test_set['true_event'] = [['Space'] for el in range(len(space_exploration_test_set))] 
+space_exploration_test_set['true_event'] = [['Space Exploration'] for el in range(len(space_exploration_test_set))] 
 space_exploration_test_set['true_event'][4].append('Cold War')
 space_exploration_test_set['true_event'][7].append('Cold War')
 
@@ -48,7 +48,7 @@ cold_war_test_set = pd.DataFrame({
 })
 cold_war_test_set['true_event'] = [['Cold War'] for el in range(len(cold_war_test_set))]
 cold_war_test_set['true_event'][4].append('Atomic Bomb')
-cold_war_test_set['true_event'][4].append('Digitalisation')
+cold_war_test_set['true_event'][4].append('Digital Revolution')
 cold_war_test_set['true_event'][8].append('Atomic Bomb')
 
 
@@ -73,7 +73,7 @@ women_emancipation_test_set = pd.DataFrame({
     'name': ['Iron Jawed Angels', 'Born in Flames', 'Made in Dagenham', 'North Country', 'His Girl Friday', 'The Joy Luck Club', 'Persepolis', 'Whale Rider', 'Legally Blonde', 'Bend It Like Beckham', 'Thelma & Louise', 'The Color Purple', 'The Accused'],
     'date': ['2004-01-16', '1983', '2010-09-11', '2005-10-21', '1940-01-11', '1993-09-08', '2007-06-27', '2002-09-09', '2001-06-26', '2002-04-11', '1991.0', '1985.0', '1988.0']
 })
-women_emancipation_test_set['true_event'] = [['Women emancipation'] for el in range(len(women_emancipation_test_set))]
+women_emancipation_test_set['true_event'] = [['Women Emancipation'] for el in range(len(women_emancipation_test_set))]
 women_emancipation_test_set['true_event'][6].append('Terrorism')
 women_emancipation_test_set['true_event'][11].append('Black History')
 
@@ -99,7 +99,7 @@ digitalization_test_set = pd.DataFrame({
     'name': ['2001: A Space Odyssey', 'The Matrix', 'Terminator 2: Judgment Day', 'The Lawnmower Man', 'A.I. Artificial Intelligence', 'Avatar', 'Freejack', 'The Net', 'Metropolis', 'Countdown', 'The Social Network', 'The Thirteenth Floor', 'Hackers'],
     'date': ['1968-04-06', '1999-03-31', '1991-07-01', '1992-03-06', '2001-06-26', '2009-12-10', '1992-01-17', '1995-07-28', '1927-01-10', '1987-03-14', '2010.0', '1999.0', '1995.0']
 })
-digitalization_test_set['true_event'] = [['Digitalisation'] for el in range(len(digitalization_test_set))]
+digitalization_test_set['true_event'] = [['Digital Revolution'] for el in range(len(digitalization_test_set))]
 digitalization_test_set['true_event'][6].append('Genetic Engineering')
 
 
@@ -113,7 +113,7 @@ sexuality_test_set = pd.DataFrame({
 })
 sexuality_test_set['true_event'] = [['Sexuality'] for el in range(len(sexuality_test_set))]
 sexuality_test_set['true_event'][3].append('LGBTQ')
-sexuality_test_set['true_event'][6].append('Women emancipation')
+sexuality_test_set['true_event'][6].append('Women Emancipation')
 sexuality_test_set['true_event'][7].append('WW2')
 sexuality_test_set['true_event'][8].append('Mental Health')
 
@@ -155,7 +155,7 @@ mental_health_test_set = pd.DataFrame({
     'date': ['1995-09-15', '2012-11-21', '1999-12-08', '2006-01-20', '2001-12-13', '1980-09-19', '2011-05-18', '2007-09-10', '2006-02-17', '2010-09-01', '1975.0', '1976.0', '1990.0']
 })
 mental_health_test_set['true_event'] = [['Mental Health'] for el in range(len(mental_health_test_set))]
-mental_health_test_set['true_event'][3].append('Women emancipation')
+mental_health_test_set['true_event'][3].append('Women Emancipation')
 mental_health_test_set['true_event'][4].append('Cold War')
 
 
@@ -185,8 +185,8 @@ genetic_engineering_test_set = pd.DataFrame({
     'date': ['2013-03-01', '2002-05-03', '1997-09-07', '1982-06-25', '1982-06-04', '2011-09-11', '2002-05-16', '2009-10-06', '1986-08-15', '1997-08-22', '2010.0', '2011.0', '2011.0']
 })
 genetic_engineering_test_set['true_event'] = [['Genetic Engineering'] for el in range(len(genetic_engineering_test_set))]
-genetic_engineering_test_set['true_event'][3].append('Digitalisation')
-genetic_engineering_test_set['true_event'][8].append('Digitalisation')
+genetic_engineering_test_set['true_event'][3].append('Digital Revolution')
+genetic_engineering_test_set['true_event'][8].append('Digital Revolution')
 
 
 # Test subset for LGBTQIA+
