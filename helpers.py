@@ -12,8 +12,15 @@ import requests
 import sys
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.decomposition import PCA
 from scipy import stats
+from sklearn.decomposition import PCA
+from sklearn.model_selection import cross_val_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import MultiLabelBinarizer
+from sklearn.metrics import classification_report
+from sklearn.model_selection import train_test_split
+import copy
 
 
 def compute_nan_count_and_percentage(df):
@@ -440,3 +447,56 @@ def compute_averages_and_cis(events, columns_to_compare, movies_events_df):
     upper_bounds = {col: [interval[1] for interval in intervals] for col, intervals in all_conf_intervals.items()}
 
     return all_averages, lower_bounds, upper_bounds
+
+def generate_classification_report(dictionaries_df, threshold, X_train, merged_test_set_plots, events):
+    """
+    Generate a classification report using crossvalidation 
+
+    Parameters:
+    - dictionaries: DataFrame containing the dictionaries
+    - threshold: The minimum threshold of words that need to match between a plot summary and the dictionary of an event
+    - X: DataFrame containing the training set of movies
+    - merged_test_set_plots: DataFrame containing all movies and their plot summaries
+    - events: List of events 
+
+    Returns:
+    - report_model_df (DataFrame): DataFrame containing the classification report
+    
+    """
+    # Create the test set using the given threshold
+    dictionaries_copy = dictionaries_df.copy()
+    dictionaries_copy['threshold'] = threshold
+
+    movies_test_set_events = add_event_columns(X_train, dictionaries_copy).copy()
+    movies_test_set_events = create_events_belongs_to_column(movies_test_set_events, events).copy()
+
+    movie_one_hot = movies_test_set_events.copy()
+
+    # One Hot encoding of the event columns
+    for event in events:
+        movie_one_hot.rename(columns={event: f'{event}-onehot'}, inplace=True)
+
+    # Convertion from booleans to integers for the one-hot encoded columns
+    one_hot_columns = [col for col in movie_one_hot.columns if col.endswith('-onehot')]
+    movie_one_hot[one_hot_columns] = movie_one_hot[one_hot_columns].astype(int).copy()
+
+    # Filter rows in merged_test_set_plots based on common values
+    common_values = X_train['name'].values
+    merged_test_set_plots = merged_test_set_plots.drop_duplicates(subset=['name'])
+    y = merged_test_set_plots[merged_test_set_plots['name'].isin(common_values)][['name', 'true_event']]
+
+    # Merge y with X_train based on the 'name' column
+    y = pd.merge(X_train[['name']], y, on='name', how='left')[['name', 'true_event']]
+
+    # Convert the multi-label target variable to binary matrix
+    mlb = MultiLabelBinarizer(classes=events)
+    y_binary = mlb.fit_transform(y['true_event'])
+
+    # Generate the classification report with zero_division parameter set to 1
+    X = numpy_helper(movie_one_hot, one_hot_columns)
+    report_model = classification_report(y_binary, X, target_names=mlb.classes_, output_dict=True, zero_division=1)
+    
+    # Convert the report to a DataFrame
+    report_model_df = pd.DataFrame(report_model).T
+    
+    return report_model_df
