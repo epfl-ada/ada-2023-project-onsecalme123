@@ -13,6 +13,7 @@ import sys
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.decomposition import PCA
+from scipy import stats
 
 
 def compute_nan_count_and_percentage(df):
