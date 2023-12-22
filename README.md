@@ -134,35 +134,17 @@ We conducted sentiment analysis using imported word lists for [positive](https:/
 .
 
 ```
-
-
 ### About our Team 👥
 
-<table style="border-collapse: collapse; width: 100%;">
-  <tr>
-    <td style="border: 1px solid black; padding: 8px;"> Team Members </td>
-    <td style="border: 1px solid black; padding: 8px;"> Roles </td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 8px;">Gianna Biino (@giabii) - SV Master Student</td>
-    <td style="border: 1px solid black; padding: 8px;">Notebook organisation queen</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 8px;">Charlotte Daumal (@charlottedaumal) - SV Master Student</td>
-    <td style="border: 1px solid black; padding: 8px;">Keywords processing maestro</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 8px;">Sandra Frey (@sancatfrey) - SV Master Student</td>
-    <td style="border: 1px solid black; padding: 8px;">Python plots' champion</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 8px;">Céline Hirsch (@celinehirsch) - SV Master Student</td>
-    <td style="border: 1px solid black; padding: 8px;">Web Development master</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid black; padding: 8px;">Elia Mounier-Poulat (@eliamounier) - Data Science Master Student</td>
-    <td style="border: 1px solid black; padding: 8px;">Statistics methods expert</td>
-  </tr>
-</table>
+
+| Team Members         | Roles                                                                        |
+|-----------------------|------------------------------------------------------------------------------|
+| Gianna Biino          | Lead Project Organizer, Dictionaries Expert, and Movie Genre Specialist      |
+| Charlotte Daumal      | Sentiment Analysis, TF-IDF, and PCA Specialist                              |
+| Sandra Frey           | Chief DataStory Redactor and Plot Finalization Expert                        |
+| Céline Hirsch         | Keyword Search Specialist and Web Development Expert                         |
+| Elia Mounier-Poulat   | Expert in Preliminary Data Analysis, Preparation, and Statistics Investigation |
 
 >**Note**: every team member participated actively in many data processing and analysis. We distributed the tasks evenly among ourselves.
+
+
