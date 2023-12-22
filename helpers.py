@@ -192,7 +192,7 @@ def translations_imbd_to_freebase():
         % (sys.version_info[0], sys.version_info[1])
     }
     data = requests.get(
-        url, headers=headers, params={"query": query, "format": "json"}
+        url, headers = headers, params = {"query": query, "format": "json"}
     ).json()
 
     imdb = [item["imdbID"]["value"] for item in data["results"]["bindings"]]
@@ -201,7 +201,7 @@ def translations_imbd_to_freebase():
         for item in data["results"]["bindings"]
     ]
 
-    result_df = pd.DataFrame(data={"imdb_id": imdb, "id_freebase": freebase})
+    result_df = pd.DataFrame(data = {"imdb_id": imdb, "id_freebase": freebase})
 
     return result_df
 
@@ -226,7 +226,7 @@ def movie_affected_to_event(df, event):
     return df[df[event] != False]
 
 
-def plot_events_over_years(movies_events, events, figures_per_row=4):
+def plot_events_over_years(movies_events, events, figures_per_row = 4):
     """
     Plot for each events, the number of movies over the years.
     """
@@ -237,12 +237,12 @@ def plot_events_over_years(movies_events, events, figures_per_row=4):
     num_rows = -(-len(events) // figures_per_row)
 
     fig, axes = plt.subplots(
-        num_rows, figures_per_row, figsize=(20, 5 * num_rows), sharex=True, sharey=True
+        num_rows, figures_per_row, figsize = (20, 5 * num_rows), sharex = True, sharey = True
     )
 
     axes = axes.flatten()
 
-    palette = sns.color_palette("colorblind", n_colors=len(events))
+    palette = sns.color_palette("colorblind", n_colors = len(events))
 
     for i, event in enumerate(events):
         row_idx = i // figures_per_row
@@ -252,23 +252,23 @@ def plot_events_over_years(movies_events, events, figures_per_row=4):
 
         event_melted = pd.melt(
             event_data,
-            id_vars=["date"],
-            value_vars=[event],
-            var_name="event",
-            value_name="occurred",
+            id_vars = ["date"],
+            value_vars = [event],
+            var_name = "event",
+            value_name = "occurred",
         )
 
         event_occurred = event_melted[event_melted["occurred"]]
 
-        event_count = event_occurred.groupby("date").size().reset_index(name="count")
+        event_count = event_occurred.groupby("date").size().reset_index(name = "count")
 
         sns.lineplot(
-            x="date",
-            y="count",
-            data=event_count,
-            ax=axes[i],
-            label=event,
-            color=palette[i],
+            x = "date",
+            y = "count",
+            data = event_count,
+            ax = axes[i],
+            label = event,
+            color = palette[i],
         )
 
         axes[i].set_title(f"{event}")
@@ -344,7 +344,7 @@ def pca_plot(features_df, target_df, ax):
 
     for category in df_pca["Target"].unique():
         subset = df_pca[df_pca["Target"] == category]
-        ax.scatter(subset["PC1"], subset["PC2"], label=category, alpha=0.8)
+        ax.scatter(subset["PC1"], subset["PC2"], label = category, alpha = 0.8)
 
     ax.set_xlabel("Principal Component 1 (PC1)")
     ax.set_ylabel("Principal Component 2 (PC2)")
@@ -360,12 +360,12 @@ def scatter_plot_according_events(df, x_column, y_column, axes, events, label):
     for i, event in enumerate(events):
         event_specific_df = movie_affected_to_event(df, event)
         sns.regplot(
-            x=x_column,
-            y=y_column,
-            data=event_specific_df,
-            ax=axes[i],
-            scatter=False,
-            label=label,
+            x = x_column,
+            y = y_column,
+            data = event_specific_df,
+            ax = axes[i],
+            scatter = False,
+            label = label,
         )
 
         axes[i].set_title(event)
@@ -389,11 +389,11 @@ def plot_confusion_matrix(confusion_matrix):
     )
 
     df_cm = pd.DataFrame(
-        confusion_matrix, index=["Yes", "No"], columns=["Positive", "Negative"]
+        confusion_matrix, index = ["Yes", "No"], columns = ["Positive", "Negative"]
     )
 
     return sns.heatmap(
-        df_cm, cmap="YlOrRd", annot=label, annot_kws={"size": 16}, cbar=False, fmt=""
+        df_cm, cmap = "YlOrRd", annot = label, annot_kws = {"size": 16}, cbar = False, fmt = ""
     )
 
 
@@ -510,18 +510,18 @@ def generate_classification_report(
     movie_one_hot = movies_test_set_events.copy()
 
     for event in events:
-        movie_one_hot.rename(columns={event: f"{event}-onehot"}, inplace=True)
+        movie_one_hot.rename(columns = {event: f"{event}-onehot"}, inplace=True)
 
     one_hot_columns = [col for col in movie_one_hot.columns if col.endswith("-onehot")]
     movie_one_hot[one_hot_columns] = movie_one_hot[one_hot_columns].astype(int).copy()
 
     common_values = X_train["name"].values
-    merged_test_set_plots = merged_test_set_plots.drop_duplicates(subset=["name"])
+    merged_test_set_plots = merged_test_set_plots.drop_duplicates(subset = ["name"])
 
     y = merged_test_set_plots[merged_test_set_plots["name"].isin(common_values)][
         ["name", "true_event"]
     ]
-    y = pd.merge(X_train[["name"]], y, on="name", how="left")[["name", "true_event"]]
+    y = pd.merge(X_train[["name"]], y, on = "name", how = "left")[["name", "true_event"]]
 
     mlb = MultiLabelBinarizer(classes=events)
     y_binary = mlb.fit_transform(y["true_event"])
@@ -529,7 +529,7 @@ def generate_classification_report(
     X = numpy_helper(movie_one_hot, one_hot_columns)
 
     report_model = classification_report(
-        y_binary, X, target_names=mlb.classes_, output_dict=True, zero_division=1
+        y_binary, X, target_names = mlb.classes_, output_dict = True, zero_division = 1
     )
     report_model_df = pd.DataFrame(report_model).T
 
@@ -575,7 +575,7 @@ def determine_topn_words(section_df, whole_collection_df, n):
     }
 
     sorted_section_tfidf = sorted(
-        section_tfidf.items(), key=lambda x: x[1], reverse=True
+        section_tfidf.items(), key = lambda x: x[1], reverse = True
     )
     top_n_words = sorted_section_tfidf[:n]
 
@@ -672,28 +672,28 @@ def plot_events_positive_negative_scores_interactive(df, positive_column, negati
         )
         formatted_distances_values = formatted_distances.values
         scatter_trace = go.Scatter(
-            x=event_specific_df[negative_column],
-            y=event_specific_df[positive_column],
-            mode="markers",
-            marker=dict(color=color_scale[events.index(event)], size=marker_size),
-            name=event,
-            hovertemplate=f"Event: {event}<br>"
+            x = event_specific_df[negative_column],
+            y = event_specific_df[positive_column],
+            mode = "markers",
+            marker = dict(color=color_scale[events.index(event)], size = marker_size),
+            name = event,
+            hovertemplate = f"Event: {event}<br>"
             + f"Average Negative Emotion Score: %{{x}} %<br>"
             + f"Average Positive Emotion Score: %{{y}} %<br>"
             + f"Distance to Origin: {formatted_distances_values[0]} <extra></extra>",
-            text=[event] * len(event_specific_df),
+            text = [event] * len(event_specific_df),
         )
         fig_sentiment.add_trace(scatter_trace)
 
     fig_sentiment.update_layout(
-        title=f"Events Plotted According to Average Positive and Negative Emotions Scores",
-        xaxis_title="Average Negative Score (%)",
-        yaxis_title="Average Positive Score (%)",
-        legend_title="Events",
-        legend=dict(x=1.02, y=1, font=dict(size=10)),
-        height=450,
-        xaxis=dict(range=[0, 17]),
-        yaxis=dict(range=[0, 17]),
+        title = f"Events Plotted According to Average Positive and Negative Emotions Scores",
+        xaxis_title = "Average Negative Score (%)",
+        yaxis_title = "Average Positive Score (%)",
+        legend_title = "Events",
+        legend = dict(x = 1.02, y = 1, font = dict(size = 10)),
+        height = 450,
+        xaxis = dict(range = [0, 17]),
+        yaxis = dict(range = [0, 17]),
     )
 
     return fig_sentiment
