@@ -1,6 +1,10 @@
-# From Protests to Pixels: The Global Film Industry's Reflections on the Biggest Movements and Events of the Last Century
+## From Protests to Pixels: The Global Film Industry's Reflections on the Biggest Movements and Events of the Last Century
 
-## Abstract 💡
+
+Link to our Data Story: [From protest to Contest](https://celinehirsch.github.io/from-protests-to-pixels/)
+
+
+### Abstract 💡
 
 The last century witnessed key social and political events that transformed many facets of human society, ranging from World War I, to Female Emancipation, to the Opioid Crisis.  Cinema being a way to depict real-life (as many other forms of art), can reflect all those core societal events and movements.
 
@@ -26,7 +30,7 @@ The following events were analysed:
 - Terrorism
 
 
-## Research Questions 🔍
+### Research Questions 🔍
 
 To determine the most impactful events/movements of the last century, we define the importance of an event/movement through movies' characteristics analysis. To drive our reflexion, we formulated several main research questions:
 
@@ -39,7 +43,7 @@ To determine the most impactful events/movements of the last century, we define 
 - Is there a significant difference between positive and negative emotional impact of movies depending on events? Can we analyse the emotional impacts by evaluating written movie reviews by ```sentiment analysis```?
 
 
-## Additional Datasets 📈
+### Additional Datasets 📈
 
 To answer our research questions, we propose these two additional datasets:
 
@@ -48,41 +52,41 @@ To answer our research questions, we propose these two additional datasets:
 - ```imdb_movies.csv```: This dataset includes metadata for 45 000 movies from the *Full Movie Lens Dataset* obtained from  [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset), which contains additinal interesting indicators such as vote-counts, popularity and additional movies revenues. We merged it with our current dataset by querying [Wikidata](https://query.wikidata.org) for Freebase_id translations.
 
 
-## Methods 📚
+### Methods 📚
 
-### Step 1: Data Loading and Preprocessing
+#### Step 1: Data Loading and Preprocessing
 
 We merged the movies dataset (```movie.metadata.tsv```) with plot summaries (```plot_summaries.txt```) The dataset was then augmented with external sources, as described above, followed by preprocessing for convenience.
 
-### Step 2: General Statistics about the Dataset
+#### Step 2: General Statistics about the Dataset
 
 In this section, we investigate time-span coverage, address NaNs and invalid values, and reorganize country and genre labels into broader categories such as ```world regions``` and ```new genres```.
 
-### Step 3: Associating movies to historical events and movements using dictionaries
+#### Step 3: Associating movies to historical events and movements using dictionaries
 
 To investigate the influence of historical events and movements in movies, we linked them to films through keyword searches in plot summaries, utilizing event-specific dictionaries we created. Despite our objective approach, we conducted tests to assess potential bias in our dictionaries, including the use of a ```correlation matrix``` and the creation of a test set for evaluating other ```performance metrics```.
 
-### Step 4: Diving into the Analysis of Events
+#### Step 4: Diving into the Analysis of Events
 
 In this section, we tried to answer the different research questions.
 
-#### Number of Movies per Event Over the Years
+##### Number of Movies per Event Over the Years
 
 We plotted the annual movie count for each event, providing insights into event popularity and serving as an additional test for our dictionary-based event classification. We also performed an ```ANOVA test``` to detect significant differences in mean percentages across years per event.
 
-#### Number of Countries producing Movies about given Events
+##### Number of Countries producing Movies about given Events
 
 To assess the impact of a particular event, specifically the number of countries producing movies about it, we analyzed variations and magnitudes between events by calculating the ```coefficient of variation``` and ```standard deviation```.
 
-#### Box Office Revenue, Rating, Rating Counts and Popularity
+##### Box Office Revenue, Rating, Rating Counts and Popularity
 
 To measure audience attendance and the impact of movies based on the events they represent, we decided to use ```95% confidence``` interval plots. This allows us to compare average rating scores, counts, popularity, and box office performance for movies associated with various events.
 
-#### Review Sentiment Analysis
+##### Review Sentiment Analysis
 
 We conducted sentiment analysis using imported word lists for [positive](https://ptrckprry.com/course/ssd/data/positive-words.txt) and [negative](https://ptrckprry.com/course/ssd/data/negative-words.txt) emotions. We had two options for analyzing reviews: utilizing the complete review (```Review Detail```) or the filtered keywords from reviews (```Review Summary```), and we chose the latter due to its higher variance in positive and negative emotion ratios, assessed through a ```PCA```. 
 
-## Steps for the Future 💫 
+### Steps for the Future 💫 
 
 Now that we have identified methods for analyzing event impact, we will be able to proceed with the analysis.
 
@@ -95,7 +99,7 @@ Now that we have identified methods for analyzing event impact, we will be able 
 - It could be interesting to perform clustering on our dataset using our impact indicators as prediction features. This could then be compared to the dictionary-based event-matching method.
 
 
-## Proposed Timeline ⏳
+### Proposed Timeline ⏳
 
 ```
 .
@@ -125,7 +129,7 @@ Now that we have identified methods for analyzing event impact, we will be able 
 ```
 
 
-## About our Team 👥
+### About our Team 👥
 
 <table style="border-collapse: collapse; width: 100%;">
   <tr>
