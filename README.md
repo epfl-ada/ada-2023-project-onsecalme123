@@ -141,8 +141,8 @@ We conducted sentiment analysis using imported word lists for [positive](https:/
 |-----------------------|------------------------------------------------------------------------------|
 | Gianna Biino          | Lead Project Organizer, and Dictionaries Expert      |
 | Charlotte Daumal      | Sentiment Analysis, TF-IDF, and PCA Specialist                              |
-| Sandra Frey           | Chief DataStory Redactor and Plot Finalization Expert                        |
-| Céline Hirsch         | Keyword Search Specialist and Web Development Expert                         |
+| Sandra Frey           | Chief DataStory Redactor, and Plot Finalization Expert                        |
+| Céline Hirsch         | Keyword Search Specialist, and Web Development Expert                         |
 | Elia Mounier-Poulat   | Expert in Preliminary Data Analysis, and Statistics Investigation |
 
 >**Note**: every team member participated actively in many data processing and analysis. We distributed the tasks evenly among ourselves.
