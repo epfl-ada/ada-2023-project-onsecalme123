@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 
+import ast
 from collections import Counter
 import nltk
 from nltk import punkt
@@ -21,6 +22,9 @@ from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 import copy
+from sklearn.feature_extraction.text import TfidfVectorizer
+import matplotlib.cm as cm
+import plotly.graph_objects as go
 
 
 def compute_nan_count_and_percentage(df):
@@ -123,7 +127,7 @@ def count_genres_for_event(df, event_column):
     """
     Count the occurrences of genres for movies belonging to a specific event.
     """
-    
+
     df_expanded = df.copy()
     df_expanded = df_expanded.explode("new_genre")
 
@@ -280,7 +284,7 @@ def get_year_percentage(df, event):
     """
     Calculate the percentage of movies for a specific event over the years.
     """
-    
+
     event_data = movie_affected_to_event(df, event)
     year_percentage_series = (
         event_data.groupby("date").size() / df.groupby("date").size() * 100
@@ -294,18 +298,18 @@ def compute_common_words_ratio(text, word_list):
     """
     Compute the common words ratio between a text and a list of words.
     """
-    
+
     text_nopunct = remove_punctuation(text.lower())
     text_words = text_nopunct.split()
-    
+
     word_counts = Counter(text_words)
-    
+
     common_word_counts = sum(word_counts[word] for word in word_list)
-    
+
     total_words = len(text_words)
-    
+
     ratio = common_word_counts / total_words if total_words > 0 else 0
-    
+
     return ratio
 
 
@@ -314,11 +318,13 @@ def add_common_words_scores(df, column_name, words_list_1, words_list_2):
     Add a column to each DataFrame with the ratio of common words.
     """
 
-    df[f'positive_emotion_ratio_{column_name}'] = df[column_name].apply(lambda x: 
-                                                                        compute_common_words_ratio(x, words_list_1) * 100)
-    df[f'negative_emotion_ratio_{column_name}'] = df[column_name].apply(lambda x: 
-                                                                        compute_common_words_ratio(x, words_list_2) * 100)
-    
+    df[f"positive_emotion_ratio_{column_name}"] = df[column_name].apply(
+        lambda x: compute_common_words_ratio(x, words_list_1) * 100
+    )
+    df[f"negative_emotion_ratio_{column_name}"] = df[column_name].apply(
+        lambda x: compute_common_words_ratio(x, words_list_2) * 100
+    )
+
     return df
 
 
@@ -326,73 +332,88 @@ def pca_plot(features_df, target_df, ax):
     """
     Plot a 2D-PCA in a subplot.
     """
-    
+
     X = features_df
     y = target_df
-    
-    pca = PCA(n_components = 2)
-    X_pca = pca.fit_transform(X)
-    
-    df_pca = pd.DataFrame(data = X_pca, columns = ['PC1', 'PC2'])
-    df_pca['Target'] = y
-    
-    for category in df_pca['Target'].unique():
-        subset = df_pca[df_pca['Target'] == category]
-        ax.scatter(subset['PC1'], subset['PC2'], label = category, alpha=0.8)
 
-    ax.set_xlabel('Principal Component 1 (PC1)')
-    ax.set_ylabel('Principal Component 2 (PC2)')
-    
-    
+    pca = PCA(n_components=2)
+    X_pca = pca.fit_transform(X)
+
+    df_pca = pd.DataFrame(data=X_pca, columns=["PC1", "PC2"])
+    df_pca["Target"] = y
+
+    for category in df_pca["Target"].unique():
+        subset = df_pca[df_pca["Target"] == category]
+        ax.scatter(subset["PC1"], subset["PC2"], label=category, alpha=0.8)
+
+    ax.set_xlabel("Principal Component 1 (PC1)")
+    ax.set_ylabel("Principal Component 2 (PC2)")
+
+
 def scatter_plot_according_events(df, x_column, y_column, axes, events, label):
     """
     Plot scatter plot and linear regression line according to events.
     """
-    
+
     axes = axes.flatten()
 
     for i, event in enumerate(events):
         event_specific_df = movie_affected_to_event(df, event)
-        sns.regplot(x = x_column, y = y_column, data = event_specific_df, ax = axes[i], scatter=False, label = label)
-        
+        sns.regplot(
+            x=x_column,
+            y=y_column,
+            data=event_specific_df,
+            ax=axes[i],
+            scatter=False,
+            label=label,
+        )
+
         axes[i].set_title(event)
-        axes[i].legend(loc = 'upper left')
-        axes[i].set_xlabel('Years')
-        axes[i].set_ylabel('Emotion scores')
-        #axes[i].set_yscale('log')
+        axes[i].legend(loc="upper left")
+        axes[i].set_xlabel("Years")
+        axes[i].set_ylabel("Emotion scores")
+        # axes[i].set_yscale('log')
 
 
 def plot_confusion_matrix(confusion_matrix):
     """
     Plot confusion matrix given TP, FP, FN, TN
     """
-    
-    [[TP, FP],[FN, TN]] = confusion_matrix
-    label = np.asarray([['TP {}'.format(TP), 'FP {}'.format(FP)],
-                        ['FN {}'.format(FN), 'TN {}'.format(TN)]])
-    
-    df_cm = pd.DataFrame(confusion_matrix, index=['Yes', 'No'], columns=['Positive', 'Negative']) 
-    
-    return sns.heatmap(df_cm, cmap='YlOrRd', annot=label, annot_kws={"size": 16}, cbar=False, fmt='')
+
+    [[TP, FP], [FN, TN]] = confusion_matrix
+    label = np.asarray(
+        [
+            ["TP {}".format(TP), "FP {}".format(FP)],
+            ["FN {}".format(FN), "TN {}".format(TN)],
+        ]
+    )
+
+    df_cm = pd.DataFrame(
+        confusion_matrix, index=["Yes", "No"], columns=["Positive", "Negative"]
+    )
+
+    return sns.heatmap(
+        df_cm, cmap="YlOrRd", annot=label, annot_kws={"size": 16}, cbar=False, fmt=""
+    )
 
 
 def numpy_helper(df, cols):
-    '''
+    """
     Obtain a NumPy array from a specific subset columns of a DataFrame.
 
     Parameters:
     - df: pd.DataFrame with N rows
-    - cols: M column names 
+    - cols: M column names
 
     Returns:
     - np.array: corresponding NumPy array of shape (N, M), cast as a float
-    '''
-    
+    """
+
     return df[cols].values.astype(float)
 
 
 def custom_list_agg(series):
-    '''
+    """
     Custom aggregation function for pandas DataFrame groupby.
 
     Parameters:
@@ -401,13 +422,13 @@ def custom_list_agg(series):
     Returns:
     - Union[Any, List[Any]]: If the series has only one unique value, the value is returned as-is.
       If there are multiple unique values, a list of unique values is returned.
-    '''
-    
+    """
+
     unique_values = series.unique()
-    
+
     if len(unique_values) == 1:
         return unique_values[0]
-    
+
     else:
         return list(unique_values)
 
@@ -426,7 +447,7 @@ def compute_averages_and_cis(events, columns_to_compare, movies_events_df):
     - lower_bounds (dict): Dictionary containing lists of lower bounds of confidence intervals for each column.
     - upper_bounds (dict): Dictionary containing lists of upper bounds of confidence intervals for each column.
     """
-    
+
     all_averages = {col: [] for col in columns_to_compare}
     all_conf_intervals = {col: [] for col in columns_to_compare}
 
@@ -438,71 +459,96 @@ def compute_averages_and_cis(events, columns_to_compare, movies_events_df):
             element_data_cleaned = element_data.dropna()
 
             avg = element_data_cleaned.mean()
-            conf_interval = stats.t.interval(0.95, len(element_data_cleaned) - 1, loc=avg, scale=stats.sem(element_data_cleaned))
+            conf_interval = stats.t.interval(
+                0.95,
+                len(element_data_cleaned) - 1,
+                loc=avg,
+                scale=stats.sem(element_data_cleaned),
+            )
 
             all_averages[col].append(avg)
             all_conf_intervals[col].append(conf_interval)
-    
-    lower_bounds = {col: [interval[0] for interval in intervals] for col, intervals in all_conf_intervals.items()}
-    upper_bounds = {col: [interval[1] for interval in intervals] for col, intervals in all_conf_intervals.items()}
+
+    lower_bounds = {
+        col: [interval[0] for interval in intervals]
+        for col, intervals in all_conf_intervals.items()
+    }
+    upper_bounds = {
+        col: [interval[1] for interval in intervals]
+        for col, intervals in all_conf_intervals.items()
+    }
 
     return all_averages, lower_bounds, upper_bounds
 
-def generate_classification_report(dictionaries_df, threshold, X_train, merged_test_set_plots, events):
+
+def generate_classification_report(
+    dictionaries_df, threshold, X_train, merged_test_set_plots, events
+):
     """
-    Generate a classification report using crossvalidation 
+    Generate a classification report using crossvalidation
 
     Parameters:
     - dictionaries: DataFrame containing the dictionaries
     - threshold: The minimum threshold of words that need to match between a plot summary and the dictionary of an event
     - X: DataFrame containing the training set of movies
     - merged_test_set_plots: DataFrame containing all movies and their plot summaries
-    - events: List of events 
+    - events: List of events
 
     Returns:
     - report_model_df (DataFrame): DataFrame containing the classification report
-    
+
     """
-    # Create the test set using the given threshold
+
     dictionaries_copy = dictionaries_df.copy()
-    dictionaries_copy['threshold'] = threshold
+    dictionaries_copy["threshold"] = threshold
 
     movies_test_set_events = add_event_columns(X_train, dictionaries_copy).copy()
-    movies_test_set_events = create_events_belongs_to_column(movies_test_set_events, events).copy()
+    movies_test_set_events = create_events_belongs_to_column(
+        movies_test_set_events, events
+    ).copy()
 
     movie_one_hot = movies_test_set_events.copy()
 
-    # One Hot encoding of the event columns
     for event in events:
-        movie_one_hot.rename(columns={event: f'{event}-onehot'}, inplace=True)
+        movie_one_hot.rename(columns={event: f"{event}-onehot"}, inplace=True)
 
-    # Convertion from booleans to integers for the one-hot encoded columns
-    one_hot_columns = [col for col in movie_one_hot.columns if col.endswith('-onehot')]
+    one_hot_columns = [col for col in movie_one_hot.columns if col.endswith("-onehot")]
     movie_one_hot[one_hot_columns] = movie_one_hot[one_hot_columns].astype(int).copy()
 
-    # Filter rows in merged_test_set_plots based on common values
-    common_values = X_train['name'].values
-    merged_test_set_plots = merged_test_set_plots.drop_duplicates(subset=['name'])
-    y = merged_test_set_plots[merged_test_set_plots['name'].isin(common_values)][['name', 'true_event']]
+    common_values = X_train["name"].values
+    merged_test_set_plots = merged_test_set_plots.drop_duplicates(subset=["name"])
 
-    # Merge y with X_train based on the 'name' column
-    y = pd.merge(X_train[['name']], y, on='name', how='left')[['name', 'true_event']]
+    y = merged_test_set_plots[merged_test_set_plots["name"].isin(common_values)][
+        ["name", "true_event"]
+    ]
+    y = pd.merge(X_train[["name"]], y, on="name", how="left")[["name", "true_event"]]
 
-    # Convert the multi-label target variable to binary matrix
     mlb = MultiLabelBinarizer(classes=events)
-    y_binary = mlb.fit_transform(y['true_event'])
+    y_binary = mlb.fit_transform(y["true_event"])
 
-    # Generate the classification report with zero_division parameter set to 1
     X = numpy_helper(movie_one_hot, one_hot_columns)
-    report_model = classification_report(y_binary, X, target_names=mlb.classes_, output_dict=True, zero_division=1)
-    
-    # Convert the report to a DataFrame
+
+    report_model = classification_report(
+        y_binary, X, target_names=mlb.classes_, output_dict=True, zero_division=1
+    )
     report_model_df = pd.DataFrame(report_model).T
-    
+
     return report_model_df
 
+
 def list_to_set(x):
+    """
+    Convert a list to a set.
+
+    Parameters:
+    - x (list or any): The input list or value.
+
+    Returns:
+    - set or any: If the input is a list, returns a set with the elements of the list.
+                  Otherwise, returns the input value as is.
+    """
     return set(x) if isinstance(x, list) else x
+
 
 def determine_topn_words(section_df, whole_collection_df, n):
     """
@@ -517,58 +563,44 @@ def determine_topn_words(section_df, whole_collection_df, n):
     - list: A list of tuples, each containing a word and its corresponding TF-IDF coefficient,
             sorted in descending order of TF-IDF coefficients.
     """
-    
-    # Combining all text data into a single string
-    
-    section_text = ' '.join(section_df['summary'])
-    whole_collection_text = ' '.join(whole_collection_df['summary'])
 
-    
-    # Computing TF-IDF coefficients related to words specific to an event
-    
-    vectorizer = TfidfVectorizer(stop_words = 'english')
+    section_text = " ".join(section_df["summary"])
+    whole_collection_text = " ".join(whole_collection_df["summary"])
+
+    vectorizer = TfidfVectorizer(stop_words="english")
     tfidf_matrix = vectorizer.fit_transform([section_text, whole_collection_text])
     feature_names = vectorizer.get_feature_names_out()
-    section_tfidf = {word: tfidf_matrix[0, idx] for idx, word in enumerate(feature_names)}
+    section_tfidf = {
+        word: tfidf_matrix[0, idx] for idx, word in enumerate(feature_names)
+    }
 
-    
-    # Sorting words by TF-IDF coefficient in descending order
-    
-    sorted_section_tfidf = sorted(section_tfidf.items(), key = lambda x: x[1], reverse = True)
-
-    
-    # Extracting the top n words with TF-IDF coefficients
-    
+    sorted_section_tfidf = sorted(
+        section_tfidf.items(), key=lambda x: x[1], reverse=True
+    )
     top_n_words = sorted_section_tfidf[:n]
-    
 
     return top_n_words
 
+
 def convert_to_list(country):
+    """Convert a string representation of a list to an actual list of strings."""
     try:
-        
-        # Safely evaluate literal syntax of the string
-        
         country_list = ast.literal_eval(country)
-        
-        # Ensure all elements in the list are strings
-        
         country_list = [str(c) for c in country_list]
         return country_list
-    
+
     except (ValueError, SyntaxError):
-        
-        # If evaluation fails, return a list with the original value
-        
         return [str(country)]
-    
-    
+
 
 def gini_coefficient(arr):
+    """
+    Calculates the Gini coefficient
+    """
     arr = np.asarray(arr)
     n = arr.shape[0]
     indices = np.arange(1, n + 1)
-    return ((2 * np.sum((indices - 1) * arr)) / (n * np.sum(arr)))
+    return (2 * np.sum((indices - 1) * arr)) / (n * np.sum(arr))
 
 
 def compute_average_emotion(df, events_columns, emotions):
@@ -583,29 +615,25 @@ def compute_average_emotion(df, events_columns, emotions):
     Returns:
     - pandas DataFrame, containing the computed averages for each event
     """
-    
+
     result_list = []
 
-    
-    # Iterating over the events 
-    
     for event in events_columns:
         filtered_df = df[df[event] == True]
-        event_data = {'event': event}
+        event_data = {"event": event}
 
-        
-        # Iterating over emotions to compute the average emotion score
-        
         for emotion in emotions:
-            average_score = filtered_df[f'{emotion}_emotion_ratio_review_summary'].mean()
-            event_data[f'average_{emotion}_score'] = average_score
+            average_score = filtered_df[
+                f"{emotion}_emotion_ratio_review_summary"
+            ].mean()
+            event_data[f"average_{emotion}_score"] = average_score
 
         result_list.append(event_data)
 
-        
     result_df = pd.DataFrame(result_list)
-    
+
     return result_df
+
 
 def plot_events_positive_negative_scores_interactive(df, positive_column, negative_column, events):
     """
@@ -621,50 +649,51 @@ def plot_events_positive_negative_scores_interactive(df, positive_column, negati
     - go.Figure: An interactive plotly figure displaying events with average positive and negative emotion scores.
     """
 
-    # If the DataFrame is empty, a message is printed, and the function returns an empty plot
-    
     if df.empty:
         print("DataFrame is empty. Skipping plot.")
         return go.Figure()
 
-    
     fig_sentiment = go.Figure()
 
-    color_scale = [f'rgb{tuple(int(x * 255) for x in cm.tab20c(i)[:3])}' for i in range(len(events))]
+    color_scale = [
+        f"rgb{tuple(int(x * 255) for x in cm.tab20c(i)[:3])}"
+        for i in range(len(events))
+    ]
     marker_size = 10
 
     for event in events:
-        event_specific_df = df[df['event'] == event]
+        event_specific_df = df[df["event"] == event]
 
-        # Calculate distances and format to display only numerical values with two decimal places
-        
-        formatted_distances = event_specific_df.apply(lambda row: "{:.2f}".format(np.sqrt(row[negative_column]*2 + row[positive_column]*2)), axis = 1)
-
-        
-        # Extract the first (and only) element from the formatted_distances Series
-        
+        formatted_distances = event_specific_df.apply(
+            lambda row: "{:.2f}".format(
+                np.sqrt(row[negative_column] * 2 + row[positive_column] * 2)
+            ),
+            axis=1,
+        )
         formatted_distances_values = formatted_distances.values
-
-        
-        # Create scatter trace for the current event with a different color and larger markers
-        
-        scatter_trace = go.Scatter(x = event_specific_df[negative_column], y = event_specific_df[positive_column],
-                                   mode = 'markers', marker = dict(color = color_scale[events.index(event)], size = marker_size),
-                                   name = event,
-                                   hovertemplate = f'Event: {event}<br>' +
-                                                 f'Average Negative Emotion Score: %{{x}} %<br>' +
-                                                 f'Average Positive Emotion Score: %{{y}} %<br>' +
-                                                 f'Distance to Origin: {formatted_distances_values[0]} <extra></extra>',
-                                   text = [event] * len(event_specific_df))
-
-        # Add the scatter trace to the figure
+        scatter_trace = go.Scatter(
+            x=event_specific_df[negative_column],
+            y=event_specific_df[positive_column],
+            mode="markers",
+            marker=dict(color=color_scale[events.index(event)], size=marker_size),
+            name=event,
+            hovertemplate=f"Event: {event}<br>"
+            + f"Average Negative Emotion Score: %{{x}} %<br>"
+            + f"Average Positive Emotion Score: %{{y}} %<br>"
+            + f"Distance to Origin: {formatted_distances_values[0]} <extra></extra>",
+            text=[event] * len(event_specific_df),
+        )
         fig_sentiment.add_trace(scatter_trace)
 
-    # Update figure layout
-    fig_sentiment.update_layout(title = f'Events Plotted According to Average Positive and Negative Emotions Scores',
-                      xaxis_title = 'Average Negative Score (%)', yaxis_title='Average Positive Score (%)', legend_title = 'Events',
-                      legend = dict(x = 1.02, y = 1, font = dict(size=10)), height = 650, xaxis = dict(range = [0, 17]), yaxis = dict(range = [0, 17]))
+    fig_sentiment.update_layout(
+        title=f"Events Plotted According to Average Positive and Negative Emotions Scores",
+        xaxis_title="Average Negative Score (%)",
+        yaxis_title="Average Positive Score (%)",
+        legend_title="Events",
+        legend=dict(x=1.02, y=1, font=dict(size=10)),
+        height=650,
+        xaxis=dict(range=[0, 17]),
+        yaxis=dict(range=[0, 17]),
+    )
 
     return fig_sentiment
-
-
