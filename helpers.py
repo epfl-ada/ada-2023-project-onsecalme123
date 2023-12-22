@@ -500,3 +500,171 @@ def generate_classification_report(dictionaries_df, threshold, X_train, merged_t
     report_model_df = pd.DataFrame(report_model).T
     
     return report_model_df
+
+def list_to_set(x):
+    return set(x) if isinstance(x, list) else x
+
+def determine_topn_words(section_df, whole_collection_df, n):
+    """
+    Determine the top n words with TF-IDF coefficients for a specific section of a collection.
+
+    Parameters:
+    - section_df (pd.DataFrame): DataFrame containing the text data for a specific section.
+    - whole_collection_df (pd.DataFrame): DataFrame containing the entire collection's text data.
+    - n (int): Number of top words to extract based on TF-IDF coefficients.
+
+    Returns:
+    - list: A list of tuples, each containing a word and its corresponding TF-IDF coefficient,
+            sorted in descending order of TF-IDF coefficients.
+    """
+    
+    # Combining all text data into a single string
+    
+    section_text = ' '.join(section_df['summary'])
+    whole_collection_text = ' '.join(whole_collection_df['summary'])
+
+    
+    # Computing TF-IDF coefficients related to words specific to an event
+    
+    vectorizer = TfidfVectorizer(stop_words = 'english')
+    tfidf_matrix = vectorizer.fit_transform([section_text, whole_collection_text])
+    feature_names = vectorizer.get_feature_names_out()
+    section_tfidf = {word: tfidf_matrix[0, idx] for idx, word in enumerate(feature_names)}
+
+    
+    # Sorting words by TF-IDF coefficient in descending order
+    
+    sorted_section_tfidf = sorted(section_tfidf.items(), key = lambda x: x[1], reverse = True)
+
+    
+    # Extracting the top n words with TF-IDF coefficients
+    
+    top_n_words = sorted_section_tfidf[:n]
+    
+
+    return top_n_words
+
+def convert_to_list(country):
+    try:
+        
+        # Safely evaluate literal syntax of the string
+        
+        country_list = ast.literal_eval(country)
+        
+        # Ensure all elements in the list are strings
+        
+        country_list = [str(c) for c in country_list]
+        return country_list
+    
+    except (ValueError, SyntaxError):
+        
+        # If evaluation fails, return a list with the original value
+        
+        return [str(country)]
+    
+    
+
+def gini_coefficient(arr):
+    arr = np.asarray(arr)
+    n = arr.shape[0]
+    indices = np.arange(1, n + 1)
+    return ((2 * np.sum((indices - 1) * arr)) / (n * np.sum(arr)))
+
+
+def compute_average_emotion(df, events_columns, emotions):
+    """
+    Compute the average of values in 'value_column' based on the groups defined by 'group_column'.
+
+    Parameters:
+    - df: pandas DataFrame
+    - events_columns: list of str, the columns based on which you want to group the data
+    - emotions: list of str, the emotions for which you are computing averages
+
+    Returns:
+    - pandas DataFrame, containing the computed averages for each event
+    """
+    
+    result_list = []
+
+    
+    # Iterating over the events 
+    
+    for event in events_columns:
+        filtered_df = df[df[event] == True]
+        event_data = {'event': event}
+
+        
+        # Iterating over emotions to compute the average emotion score
+        
+        for emotion in emotions:
+            average_score = filtered_df[f'{emotion}_emotion_ratio_review_summary'].mean()
+            event_data[f'average_{emotion}_score'] = average_score
+
+        result_list.append(event_data)
+
+        
+    result_df = pd.DataFrame(result_list)
+    
+    return result_df
+
+def plot_events_positive_negative_scores_interactive(df, positive_column, negative_column, events):
+    """
+    Plot an interactive scatter plot with positive scores on the y-axis and negative scores on the x-axis.
+
+    Parameters:
+    - df (pd.DataFrame): The DataFrame containing the data to be plotted.
+    - positive_column (str): The column name for positive scores (y-axis).
+    - negative_column (str): The column name for negative scores (x-axis).
+    - events (list): List of unique event names present in the 'event' column of the DataFrame.
+
+    Returns:
+    - go.Figure: An interactive plotly figure displaying events with average positive and negative emotion scores.
+    """
+
+    # If the DataFrame is empty, a message is printed, and the function returns an empty plot
+    
+    if df.empty:
+        print("DataFrame is empty. Skipping plot.")
+        return go.Figure()
+
+    
+    fig_sentiment = go.Figure()
+
+    color_scale = [f'rgb{tuple(int(x * 255) for x in cm.tab20c(i)[:3])}' for i in range(len(events))]
+    marker_size = 10
+
+    for event in events:
+        event_specific_df = df[df['event'] == event]
+
+        # Calculate distances and format to display only numerical values with two decimal places
+        
+        formatted_distances = event_specific_df.apply(lambda row: "{:.2f}".format(np.sqrt(row[negative_column]*2 + row[positive_column]*2)), axis = 1)
+
+        
+        # Extract the first (and only) element from the formatted_distances Series
+        
+        formatted_distances_values = formatted_distances.values
+
+        
+        # Create scatter trace for the current event with a different color and larger markers
+        
+        scatter_trace = go.Scatter(x = event_specific_df[negative_column], y = event_specific_df[positive_column],
+                                   mode = 'markers', marker = dict(color = color_scale[events.index(event)], size = marker_size),
+                                   name = event,
+                                   hovertemplate = f'Event: {event}<br>' +
+                                                 f'Average Negative Emotion Score: %{{x}} %<br>' +
+                                                 f'Average Positive Emotion Score: %{{y}} %<br>' +
+                                                 f'Distance to Origin: {formatted_distances_values[0]} <extra></extra>',
+                                   text = [event] * len(event_specific_df))
+
+        # Add the scatter trace to the figure
+        fig_sentiment.add_trace(scatter_trace)
+
+    # Update figure layout
+    fig_sentiment.update_layout(title = f'Events Plotted According to Average Positive and Negative Emotions Scores',
+                      xaxis_title = 'Average Negative Score (%)', yaxis_title='Average Positive Score (%)', legend_title = 'Events',
+                      legend = dict(x = 1.02, y = 1, font = dict(size=10)), height = 650, xaxis = dict(range = [0, 17]), yaxis = dict(range = [0, 17]))
+
+    return fig_sentiment
+
+
