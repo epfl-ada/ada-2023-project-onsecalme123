@@ -7,7 +7,7 @@ Link to our Data Story: [From Protests to Pixels](https://celinehirsch.github.io
 
 The last century witnessed key social and political events that transformed many facets of human society, ranging from World War I, to Black History, to Digital Revolution. Cinema, being a way to depict real-life, can reflect all those core societal events and movements.
 
-Our project aims to assess the most influential events and movements of the past century by analyzing their societal impact through the film industry. Recognizing cinema as a reflection of society, we will dig into various aspects of the movie industry related to each event. Six different factors, such as the quantity of films produced and their average ratings, will be considered as indicators of impact. The combined results of these assessments will ultimately guide us in determining the event that had the most significant impact on the society.
+Our project aims to assess the most influential events and movements of the past century by analyzing their societal impact through the film industry. Recognizing cinema as a reflection of society, we will dig into various aspects of the movie industry related to each event. Six different factors, such as the quantity of films produced and their average ratings, will be considered as indicators of impact. The combined results of these assessments will ultimately guide us in determining the event that had the most significant impact on society.
 
 The following events were analysed:
 
@@ -28,7 +28,7 @@ The following events were analysed:
 - **Digital Revolution**
 - **Genetic Engineering**
 
-The events marked in bold are the ones whose dictionaries that were used for keyword analysis were deemed accurate enough to be taken into account for the final analysis to find the most impactful event of the last century.
+The events marked in bold are the ones whose dictionaries used for keyword analysis were deemed accurate enough to be taken into account for the final analysis to find the most impactful event of the last century.
 
 
 ### Research Questions 🔍
@@ -47,11 +47,11 @@ To determine the most impactful events/movements of the last century, we define 
 
 ### Additional Datasets 📈
 
-To answer our research questions, we propose these two additional datasets:
+To answer our research questions, we add these two additional datasets:
 
 - ```reviews.csv```: This dataset contains written user reviews of about 500k movies from the IMDb website. It is a cleaned version of a reviews' dataset from [IMDb](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset) and can be found on [Kaggle](https://www.kaggle.com/datasets/raynardj/imdb-vision-and-nlp?select=reviews.csv). We will use this to perform sentiment analysis on reviews and determine the emotional impact that movies about a specific historical event had on society.
 
-- ```imdb_movies.csv```: This dataset includes metadata for 45 000 movies from the *Full Movie Lens Dataset* obtained from  [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset), which contains additinal interesting indicators such as vote-counts, popularity and additional movies revenues. We merged it with our current dataset by querying [Wikidata](https://query.wikidata.org) for Freebase_id translations.
+- ```imdb_movies.csv```: This dataset includes metadata for 45 000 movies from the *Full Movie Lens Dataset* obtained from  [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset), which contains additional interesting indicators such as vote-counts, popularity and additional movies revenues. We merged it with our current dataset by querying [Wikidata](https://query.wikidata.org) for Freebase_id translations.
 
 - ```inflation_index.csv```: This dataset stems from the World Bank website and contains the annual inflation indices in percentages for consumer prices between 1980 and 2022. This is needed to adjust the movie box office revenues for inflation.
 
@@ -83,7 +83,7 @@ We plotted the annual movie count for each event, providing insights into event 
 
 ##### Internationality Analysis
 
-We split the world into its different continents and constructed a world map. In this map, we mark the top three events for each continent to provide a broad overview. To quantitatively evaluate the difference between events, we compare the macroaverage ofndistributions of events from the different regions.
+We split the world into its different continents and constructed a world map. In this map, we mark the top three events for each continent to provide a broad overview. To quantitatively evaluate the difference between events, we compare the macroaverage of distributions of events from the different regions.
 
 ##### Fame Analysis
 
