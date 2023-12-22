@@ -5,9 +5,9 @@ Link to our Data Story: [From Protests to Pixels](https://celinehirsch.github.io
 
 ### Abstract 💡
 
-The last century witnessed key social and political events that transformed many facets of human society, ranging from World War I, to Female Emancipation, to the Opioid Crisis.  Cinema being a way to depict real-life (as many other forms of art), can reflect all those core societal events and movements.
+The last century witnessed key social and political events that transformed many facets of human society, ranging from World War I, to Black History, to Digital Revolution. Cinema, being a way to depict real-life, can reflect all those core societal events and movements.
 
-The goal of our project is to analyse how these events were represented by the Film Industry and how their corresponding movies were received by the public. Were certain movies watched more than others? Did the public like certain movies more? How international was the ensemble of movie producers for each event? By answering these questions and more, we want to evaluate which event of the last century was the most impactful one. Were certain movies watched more than others? Did the public like certain movies more? How international was the ensemble of movie producers for each event? By answering these questions and more, we want to evaluate which event of the last century was the most impactful one. 
+Our project aims to assess the most influential events and movements of the past century by analyzing their societal impact through the film industry. Recognizing cinema as a reflection of society, we will dig into various aspects of the movie industry related to each event. Six different factors, such as the quantity of films produced and their average ratings, will be considered as indicators of impact. The combined results of these assessments will ultimately guide us in determining the event that had the most significant impact on the society.
 
 The following events were analysed:
 
