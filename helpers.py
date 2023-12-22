@@ -691,7 +691,7 @@ def plot_events_positive_negative_scores_interactive(df, positive_column, negati
         yaxis_title="Average Positive Score (%)",
         legend_title="Events",
         legend=dict(x=1.02, y=1, font=dict(size=10)),
-        height=650,
+        height=450,
         xaxis=dict(range=[0, 17]),
         yaxis=dict(range=[0, 17]),
     )
