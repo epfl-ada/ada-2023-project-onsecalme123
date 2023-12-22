@@ -11,22 +11,24 @@ Our project aims to assess the most influential events and movements of the past
 
 The following events were analysed:
 
-- World War 1
-- World War 2
-- Space exploration
+- **World War 1**
+- **World War 2**
 - The Cold War
-- The Vietnam War
-- Women emancipation
-- Black history
-- Digitalisation
-- Sexuality emancipation
-- The rising of STDs 
-- The Opioid Crisis
+- **Atomic Bomb**
+- **Space exploration**
+- Women Emancipation
+- **Black History**
+- **Vietnam War**
+- **Drug Abuse**
+- Sexuality Emancipation
+- **The Emergence of STDs** 
+- **LGBTQ Emancipation**
 - Destigmatizing Mental Health
-- The Atomic Bomb
-- The emergence of Genetic Engineering
-- LGBTQ emancipation
-- Terrorism
+- **Terrorism**
+- **Digital Revolution**
+- **Genetic Engineering**
+
+The events marked in bold are the ones whose dictionaries that were used for keyword analysis were deemed accurate enough to be taken into account for the final analysis to find the most impactful event of the last century.
 
 
 ### Research Questions 🔍
@@ -36,9 +38,10 @@ To determine the most impactful events/movements of the last century, we define 
 - For each event we evaluate the ```number of movies``` that were produced about it. How does this number vary over time? Can we find a significant difference between the different events that will give us an indication about the most impactful event?
 - How many different ```countries``` produced movies discussing the individual events? When an event is discussed in many countries, it can be argued that it had a big worldwide impact. Can we find significant differences concerning the different events?
 - What are the most profitable movies in terms of ```box office revenues``` ? High revenues indicate a high interest of the public and thereby may reflect the impactfulness of the movies corresponding event. 
-- What events' movies receive the highest ```rating``` average from the public? The higher the rating, the higher the interest of the public in the topic (or in this case event) that the movies discuss. 
+- What events' movies receive the highest ```vote-average``` from the public? The higher the vote-average, the higher the interest of the public in the topic (or in this case event) that the movies discuss. 
 - How many people were involved and concerned about the rating of a movie (the ```vote count```)? Events whose movies are rated by more people may have had a higher importance for society. 
 - Can we observe a significant difference in the average ```popularity``` of movies belonging to certain events? Higher popularity of movies indicates a bigger impact of the event in the society.
+- To what degree does an event affect all areas of life? For this we want to analyze how an event was represented in different ```genres```. Is the event represented equally by genres or is there a specific focus on certain genres?
 - Is there a significant difference between positive and negative emotional impact of movies depending on events? Can we analyse the emotional impacts by evaluating written movie reviews by ```sentiment analysis```?
 
 
@@ -49,6 +52,11 @@ To answer our research questions, we propose these two additional datasets:
 - ```reviews.csv```: This dataset contains written user reviews of about 500k movies from the IMDb website. It is a cleaned version of a reviews' dataset from [IMDb](https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset) and can be found on [Kaggle](https://www.kaggle.com/datasets/raynardj/imdb-vision-and-nlp?select=reviews.csv). We will use this to perform sentiment analysis on reviews and determine the emotional impact that movies about a specific historical event had on society.
 
 - ```imdb_movies.csv```: This dataset includes metadata for 45 000 movies from the *Full Movie Lens Dataset* obtained from  [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset), which contains additinal interesting indicators such as vote-counts, popularity and additional movies revenues. We merged it with our current dataset by querying [Wikidata](https://query.wikidata.org) for Freebase_id translations.
+
+- ```inflation_index.csv```: This dataset stems from the World Bank website and contains the annual inflation indices in percentages for consumer prices between 1980 and 2022. This is needed to adjust the movie box office revenues for inflation.
+
+- ```iso_alpha_cont.csv```: This dataset was generated with the help of ChatGPT and allowed to plot countries on a choropleth map. 
+
 
 
 ### Methods 📚
@@ -63,39 +71,39 @@ In this section, we investigate time-span coverage, address NaNs and invalid val
 
 #### Step 3: Associating movies to historical events and movements using dictionaries
 
-To investigate the influence of historical events and movements in movies, we linked them to films through keyword searches in plot summaries, utilizing event-specific dictionaries we created. Despite our objective approach, we conducted tests to assess potential bias in our dictionaries, including the use of a ```correlation matrix``` and the creation of a test set for evaluating other ```performance metrics```.
+To investigate the influence of historical events and movements in movies, we linked them to films through keyword searches in plot summaries, utilizing event-specific dictionaries we created. In order to determine the ideal minimum threshold of words matched between the plot summaries and the dictionnaries for a movie to be associated to an event, we created a set of movies with known associated events. This set was split into a training and a test set. The ideal dictionary-specific threshold was determined using cross-validation on the training set and the performance of the dictionaries was assessed using the test set. The events ```Cold Wa```,```Women Emancipation```, ```Sexuality Emancipatio``` and ```Destigmatizing Mental Healt``` were removed due to their low performance.
 
 #### Step 4: Diving into the Analysis of Events
 
 In this section, we tried to answer the different research questions.
 
-##### Number of Movies per Event Over the Years
+##### Number of Movies Analysis
 
-We plotted the annual movie count for each event, providing insights into event popularity and serving as an additional test for our dictionary-based event classification. We also performed an ```ANOVA test``` to detect significant differences in mean percentages across years per event.
+We plotted the annual movie count for each event, providing insights into event popularity and serving as an additional test for our dictionary-based event classification. We also performed an ```ANOVA test``` to detect significant differences in mean percentages across years per event. To quantitatively evaluate the difference between events, we calculated the percentage of movie releases per year per event.
 
-##### Number of Countries producing Movies about given Events
+##### Internationality Analysis
 
-To assess the impact of a particular event, specifically the number of countries producing movies about it, we analyzed variations and magnitudes between events by calculating the ```coefficient of variation``` and ```standard deviation```.
+We split the world into its different continents and constructed a world map. In this map, we mark the top three events for each continent to provide a broad overview. To quantitatively evaluate the difference between events, we compare the macroaverage ofndistributions of events from the different regions.
 
-##### Box Office Revenue, Rating, Rating Counts and Popularity
+##### Fame Analysis
 
-To measure audience attendance and the impact of movies based on the events they represent, we decided to use ```95% confidence``` interval plots. This allows us to compare average rating scores, counts, popularity, and box office performance for movies associated with various events.
+To analyse the fame of an event we grouped the parameters ```vote-count```and ```popularity``` together due to their high correlation demonstrated in a correlation analysis. To quantify the difference between events we took the averages of these parameters for each event. These two subparameters will be weighed in the final analysis to count as one full parameter.
 
-##### Review Sentiment Analysis
+##### Box Office Revenue Analysis
 
-We conducted sentiment analysis using imported word lists for [positive](https://ptrckprry.com/course/ssd/data/positive-words.txt) and [negative](https://ptrckprry.com/course/ssd/data/negative-words.txt) emotions. We had two options for analyzing reviews: utilizing the complete review (```Review Detail```) or the filtered keywords from reviews (```Review Summary```), and we chose the latter due to its higher variance in positive and negative emotion ratios, assessed through a ```PCA```. 
+For each event the average box office revenue generated per movie was calculated. This was done after having corrected the dataset for inflation.
 
-### Steps for the Future 💫 
+##### Vote Average Analysis
 
-Now that we have identified methods for analyzing event impact, we will be able to proceed with the analysis.
+For each event the vote average for movies was calculated to be able to quantitatively compare the different events.
 
-- To find the most impactful event of the last century we will have to decide how to weigh the importance of the different features (box office revenue, rating, etc.) for the final decision. 
+##### Genre Analysis
 
-- We want to perform further statistical analysis to assess significance of our results. 
+For each event we plotted its distribution of genres. To be able to quantify this, the gini coefficients for the distributions were calculated and compared between the individual events. 
 
-- We'll optimize dictionaries for event specificity, addressing performance issues through potential testing in milestone 3. Optimization may involve identifying overly sensitive event-dictionaries, examining statistical metrics while excluding one at a time. We'll also reassess threshold values, considering specific thresholds for each dictionary.
+##### Sentiment Analysis
 
-- It could be interesting to perform clustering on our dataset using our impact indicators as prediction features. This could then be compared to the dictionary-based event-matching method.
+We conducted sentiment analysis using imported word lists for [positive](https://ptrckprry.com/course/ssd/data/positive-words.txt) and [negative](https://ptrckprry.com/course/ssd/data/negative-words.txt) emotions. We had two options for analyzing reviews: utilizing the complete review (```Review Detail```) or the filtered keywords from reviews (```Review Summary```), and we chose the latter due to its higher variance in positive and negative emotion ratios, assessed through a ```PCA```. A linear regression analysis of the sentiment scores over time was performed. Finally, the positive versus negative sentiment scores were plotted, their distance from the origin providing a quantitative information of extremity of emotions to be able to compare between events. 
 
 
 ### Proposed Timeline ⏳
@@ -137,7 +145,7 @@ Now that we have identified methods for analyzing event impact, we will be able 
   </tr>
   <tr>
     <td style="border: 1px solid black; padding: 8px;">Gianna Biino (@giabii) - SV Master Student</td>
-    <td style="border: 1px solid black; padding: 8px;">Notebook structure and organisation queen</td>
+    <td style="border: 1px solid black; padding: 8px;">Notebook organisation queen</td>
   </tr>
   <tr>
     <td style="border: 1px solid black; padding: 8px;">Charlotte Daumal (@charlottedaumal) - SV Master Student</td>
@@ -149,7 +157,7 @@ Now that we have identified methods for analyzing event impact, we will be able 
   </tr>
   <tr>
     <td style="border: 1px solid black; padding: 8px;">Céline Hirsch (@celinehirsch) - SV Master Student</td>
-    <td style="border: 1px solid black; padding: 8px;">Dictionnaries optimisation master</td>
+    <td style="border: 1px solid black; padding: 8px;">Web Development master</td>
   </tr>
   <tr>
     <td style="border: 1px solid black; padding: 8px;">Elia Mounier-Poulat (@eliamounier) - Data Science Master Student</td>
