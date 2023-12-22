@@ -1,8 +1,7 @@
 ## From Protests to Pixels: The Global Film Industry's Reflections on the Biggest Movements and Events of the Last Century
 
 
-Link to our Data Story: [From protest to Contest](https://celinehirsch.github.io/from-protests-to-pixels/)
-
+Link to our Data Story: [From protest to Contest](https://celinehirsch.github.io/from-protests-to-pixels/) ✨.
 
 ### Abstract 💡
 
